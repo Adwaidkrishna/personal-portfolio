@@ -1,0 +1,22 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+
+:root {
+    --bg-color: #030712;         /* Deepest dark slate/black background */
+    --card-bg: rgba(15, 23, 42, 0.6); /* Translucent dark slate card background */
+    --card-border: rgba(255, 255, 255, 0.08); /* Subtle card border */
+    --text-primary: #f8fafc;     /* White text */
+    --text-secondary: #94a3b8;   /* Slate gray text */
+    --accent-blue: #2563eb;      /* Primary electric blue */
+    --accent-blue-hover: #1d4ed8;
+    --accent-blue-glow: rgba(37, 99, 235, 0.25);
+}
+
+body {
+    background-color: var(--bg-color);
+    color: var(--text-primary);
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+    margin: 0;
+    padding: 0;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}

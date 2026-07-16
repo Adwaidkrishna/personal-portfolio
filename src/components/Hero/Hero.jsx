@@ -1,39 +1,127 @@
-function Hero({ name, role,about }) {
-    return (
-        <section className="container mt-5">
-            <div className="row align-items-center">
+import React from 'react';
+import './Hero.css';
 
-                <div className="col-lg-6">
-                    <h1>Hello, I'm {name}</h1>
-                    <h3>{role}</h3>
-                    <p>{about}</p>
+function Hero({ name, role, about }) {
+    return (
+        <section className="hero-section">
+            {/* Left Content Column */}
+            <div className="hero-left">
+                {/* MERN Badge */}
+                <div className="hero-badge">
+                    <span className="badge-dot"></span>
+                    <span>MERN Stack Developer</span>
                 </div>
 
-                <div className="col-lg-6 text-center">
+                {/* Typography */}
+                <h1 className="hero-title">
+                    Hi, I'm
+                    <span className="text-accent">{name}.</span>
+                </h1>
+                
+                <p className="hero-subtitle">
+                    {about}
+                </p>
+
+                {/* CTA Buttons */}
+                <div className="hero-buttons">
+                    <a href="#projects" className="btn-primary">
+                        <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor">
+                            <path d="M8 5v14l11-7z"/>
+                        </svg>
+                        <span>View Projects</span>
+                    </a>
+                    <a href="#resume" className="btn-secondary">
+                        <svg viewBox="0 0 24 24" width="16" height="16" stroke="currentColor" strokeWidth="2.5" fill="none" strokeLinecap="round" strokeLinejoin="round">
+                            <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" />
+                            <polyline points="7 10 12 15 17 10" />
+                            <line x1="12" y1="15" x2="12" y2="3" />
+                        </svg>
+                        <span>Download Resume</span>
+                    </a>
+                </div>
+
+                {/* Social links */}
+                <div className="hero-socials">
+                    <span className="social-label">Connect with me</span>
+                    <div className="social-links">
+                        {/* GitHub */}
+                        <a href="https://github.com" className="social-icon-link" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
+                            <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor">
+                                <path fillRule="evenodd" clipRule="evenodd" d="M12 2C6.477 2 2 6.477 2 12c0 4.42 2.865 8.166 6.839 9.489.5.092.682-.217.682-.482 0-.237-.008-.866-.013-1.7-2.782.603-3.369-1.34-3.369-1.34-.454-1.156-1.11-1.464-1.11-1.464-.908-.62.069-.608.069-.608 1.003.07 1.531 1.03 1.531 1.03.892 1.529 2.341 1.087 2.91.831.092-.646.35-1.086.636-1.336-2.22-.253-4.555-1.11-4.555-4.943 0-1.091.39-1.984 1.029-2.683-.103-.253-.446-1.27.098-2.647 0 0 .84-.269 2.75 1.025A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.294 2.747-1.025 2.747-1.025.546 1.377.203 2.394.1 2.647.64.699 1.028 1.592 1.028 2.683 0 3.842-2.339 4.687-4.566 4.935.359.309.678.919.678 1.852 0 1.336-.012 2.415-.012 2.743 0 .267.18.579.688.481C19.137 20.162 22 16.418 22 12c0-5.523-4.477-10-10-10z" />
+                            </svg>
+                        </a>
+                        {/* LinkedIn */}
+                        <a href="https://linkedin.com" className="social-icon-link" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+                            <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor">
+                                <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.779-1.75-1.75s.784-1.75 1.75-1.75 1.75.779 1.75 1.75-.784 1.75-1.75 1.75zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/>
+                            </svg>
+                        </a>
+                        {/* Gmail */}
+                        <a href="mailto:ihyaet@gmail.com" className="social-icon-link" aria-label="Email">
+                            <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                                <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" />
+                                <polyline points="22,6 12,13 2,6" />
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            {/* Right Column (Circular Photo & Floating Tech Cards) */}
+            <div className="hero-right">
+                <div className="ambient-glow"></div>
+                <div className="profile-frame-wrapper">
+                    {/* Background Dot grid */}
+                    <div className="dots-grid"></div>
+
+                    {/* Circular Image */}
                     <img
                         src="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wCEAAkGBwgHBgkIBwgKCgkLDRYPDQwMDRsUFRAWIB0iIiAdHx8kKDQ
                         sJCYxJx8fLT0tMTU3Ojo6Iys/RD84QzQ5OjcBCgoKDQwNGg8PGjclHyU3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nz
                         c3Nzc3Nzc3N//AABEIAJQAlAMBIgACEQEDEQH/xAAcAAABBQEBAQAAAAAAAAAAAAAAAQMEBQYCBwj/xAA7EAABAwIEAwUHAwMCBwAAAAABAAIDB
                         BEFEiExBkFREyJhcZEUMkJSgaHRI7HBFeHwYqIlM3KCktLx/8QAGgEAAQUBAAAAAAAAAAAAAAAABAABAgMFBv/EADARAAICAgAEBAQFBQEAAAAA
                         AAABAgMEEQUSITETQVFhIjJxgSMkM0KxBjSRwfAU/9oADAMBAAIRAxEAPwD0pCEKBUC7gbmnYPFcJ+iF5r9G3/hIdLbKDGIzFWyNtZpOYHrdVz1
-                        p+I6XtaQTsGsXvf8ATzWYK5POo8K1+51mFYrKl7A3ZR6sqQNlErntaLuOgQiTb0g2L0xhg1Cn0+wWbkxyngLmyMlcdTdo/f8Aso8XGkcZIkopGg
-                        bZnAF3kilhXy/aU2ZdK6bNuNk05Zan46pJI80lJPAL8yHW9FoKOtpq+mbUUkrZI3cwdRbqOqhZj21/Miuu2E38LHHqRw+/JiZYdpInD0IP5UZ2t
-                        kuGv7PFKdx5vy+uifEly3xfuTyYc+PNexrCLIR08kLsEcWIhCEhCISoSECEITDgpVCPfd4AKKp1EP0M3UlMTguo86xGUi4OluqxWJ0hoqySG/cO
-                        sZ6g7fhbQqn4ko/aKPt2D9WA5r9W8/z9EBxDH8Wra7o1MK/wrdPszF4zisOE0bp5Rmdsxl9yvO67GqmunMs7swtoLZWj0UrjavfX4yKZmVsNJ3L
-                        nkfiJ/wA5Kgb3n5YgZXHnt9lVg4ca61KS6stzMmUpuEexMbKX3ILg4a5TcNH1HJJJUxR6HNI87Bt3f7iEx2FW8DKxzuoITctLWX1p5X/6YwWjz5
-                        rQWvUB2/JHeeeQuLniGM7gSEFw6FoKWmxabDagT0VQ6N/O5zB3mPyuKfBcUqiQynkAHUKe3g/EjHmMbttByTS8NrTHjz72jWcJcTy4s59NWholA
-                        HZvuBnPS3kFo8/Zysk+Rwd6FeQRUtVhlcxssT45gbtNwL+IXqtLO2uw+GoZtLHc+HX7rDzseNU1ZDsbeDkO2LhPub46m/I7ITFHJ21HBKd3RtP2
-                        Ty6GD3FM5eceWTQIQhSIAhCEhAhCEw4KxgGWnjA6XVdbpurO1gB4BIsr7iEpC4XDSAQTY32Q5cxjNIL9UzLj5nrYpKjEq6OmDiX1UobfpnNvstt
-                        wnwzDTU7XVJD53+84clW4dRj+t4rIYxb22cAfKO0IAH0Wvom9lCCAGm9yEHfZ+1BdMf3Ms6TB6Jr7ujZfxF1PFDRAD9MG3K2iiUZkfY6i6nuheG
-                        XBuh9sv7i9jS5fcAPM7KDV5CO6GgDonJIpHNNr3UCsZJGNjr4KL6jpIynG+FxVdA6RgtNH34z4hNcDSSS4TNnPcEvdB8QCVNxB75M7CDcbAprha
-                        n9npKtuWx9ov/tb+VXkv8u0y7Fj+ZTR6Dgb8+GRf6S5v3U9U/DMmaknZzZJf6Ef2KuFp4c+eiL9jGzocmRNe4IQhEggIQhIQIQlTDnULc0jR1Kn
-                        uNyodKP1gTyBKlpF1fYRybfPHTZXSvDczgG35noF2Vk+OIpqmSjbHfLGS5pB2d19AoWS5Y7CKoc89MyNFA1mLV+Vp71ZM4AnYF7k1itZiAnLKWc
-                        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"
+                        p+I6XtaQTsGsXvf8ATzWYK5POo8K1+51mFYrKl7A3ZR6sqQNlErntaLuOgQiTb0g2L0xhg1Cn0+wWbkxyngLmyMlcdTdo/f8O/8ABmrxnEcSgkbk
+                        sVdO6N8UsTnB7HAtdmLtCDY6L07hviWlxaF0MhEdXDpJG7n/AKh1CqypVwfiRjsKvsfJPfkelJUkfdYAlR8XpCWhN3AhCEy4IQhIQIQlTDghCEgC
+                        iVd5AD0Cn7pjD/fHkd1AtsK6p9B219W0S4vE3K0eAQpT4t7p6/f1U4u2jC5a2jR4X/ZfwlE18dK500dTKP05mOIafFp3CqMQxSDh6gfUSnM46N
+                        aPed4Lzavxipxad00riBfuxg3DR4LPysfw7VZB9jXwcnxaXD1PRMR4uw2jkMcbjI/mWDuhVdTxjhzomPhlc2Rx72duwv15rA1sTY5wAb33UeR/d
+                        sW6HQLRjRvqURrrtZvsR4uw9lG90snZEjvP5HwCxT8cwbE6wNlhEbydJDob/ZUKs8D4a/r1HJV1LeG12gHxHkVfkxXh6aKsa183Vfsa9lq6WPL
+                        lc4i2pXpPDmLNxagjk3ewZXeaw+GVsNZh8VZSOuxzTbqDyNupWp4XpvZKSVw94yG/oFiZ9SjZGUF1OhwexqUoz7GvY5KkicO7onVpY0udGKx5sV
+                        +xfoUiFogwQhCQhUJEJDH//Z"
                         alt="Profile"
-                        className="img-fluid rounded-circle"
+                        className="profile-circle"
                     />
-                </div>
 
+                    {/* Floating Cards */}
+                    {/* Node.js (Green Hexagon/Leaf representation) */}
+                    <div className="tech-card card-node" title="Node.js">
+                        <svg viewBox="0 0 24 24" width="32" height="32">
+                            <path fill="#339933" d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zm-1-13h2v6h-2V7zm0 8h2v2h-2v-2z"/>
+                        </svg>
+                    </div>
+
+                    {/* React (Cyan Atom) */}
+                    <div className="tech-card card-react" title="React.js">
+                        <svg viewBox="0 0 24 24" width="32" height="32" stroke="#61DAFB" strokeWidth="2" fill="none">
+                            <ellipse cx="12" cy="12" rx="10" ry="4.5" transform="rotate(30 12 12)" />
+                            <ellipse cx="12" cy="12" rx="10" ry="4.5" transform="rotate(90 12 12)" />
+                            <ellipse cx="12" cy="12" rx="10" ry="4.5" transform="rotate(150 12 12)" />
+                            <circle cx="12" cy="12" r="2" fill="#61DAFB" />
+                        </svg>
+                    </div>
+
+                    {/* MongoDB (Green Leaf) */}
+                    <div className="tech-card card-mongo" title="MongoDB">
+                        <svg viewBox="0 0 24 24" width="32" height="32" fill="#47A248">
+                            <path d="M12 2C11.5 2 7 6.5 7 12c0 3 2.5 5.5 5 7.5 2.5-2 5-4.5 5-7.5 0-5.5-4.5-10-5-10zm0 15c-1.5-1.2-3-2.8-3-5 0-3.3 2.2-6.2 3-7.2.8 1 3 3.9 3 7.2 0 2.2-1.5 3.8-3 5z"/>
+                        </svg>
+                    </div>
+
+                    {/* Express.js ("ex" Text representation) */}
+                    <div className="tech-card card-express" title="Express.js">
+                        <span>ex</span>
+                    </div>
+                </div>
             </div>
         </section>
     );
