@@ -1,0 +1,19 @@
+import Navbar from "./components/Navbar/Navabar";
+import Hero from "./components/Hero/Hero"
+
+function App() {
+  return (
+    <>
+      <Navbar />
+      <Hero
+        name="Adwaid Krishna"
+        role="Full Stack MERN Developer"
+        about=" I build modern, scalable, and responsive web applications using
+                MongoDB, Express.js, React.js, and Node.js. Passionate about solving
+                real-world problems through clean and efficient code."
+      />
+    </>
+  )
+}
+
+export default App;
