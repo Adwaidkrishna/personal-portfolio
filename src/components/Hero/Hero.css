@@ -2,7 +2,7 @@
 .hero-section {
     max-width: 1280px;
     margin: 0 auto;
-    padding: 80px 24px 100px;
+    padding: 80px 24px 40px;
     display: grid;
     grid-template-columns: 1.15fr 0.85fr;
     gap: 64px;
@@ -291,7 +291,7 @@
         text-align: center;
         gap: 80px;
         padding-top: 40px;
-        padding-bottom: 60px;
+        padding-bottom: 30px;
     }
 
     .hero-left {

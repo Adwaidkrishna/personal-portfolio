@@ -1,5 +1,6 @@
 import Navbar from "./components/Navbar/Navabar";
 import Hero from "./components/Hero/Hero"
+import About from "./components/About/About";
 
 function App() {
   return (
@@ -12,6 +13,7 @@ function App() {
                 MongoDB, Express.js, React.js, and Node.js. Passionate about solving
                 real-world problems through clean and efficient code."
       />
+      <About />
     </>
   )
 }

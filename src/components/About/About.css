@@ -1,0 +1,184 @@
+/* About Section Wrapper */
+.about-section {
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 40px 24px 100px;
+    display: grid;
+    grid-template-columns: 1fr 2.4fr;
+    gap: 48px;
+    align-items: flex-start;
+    box-sizing: border-box;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Left Column: Intro text */
+.about-intro-col {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    align-items: flex-start;
+}
+
+.about-heading {
+    font-size: 32px;
+    font-weight: 700;
+    color: var(--text-primary);
+    margin: 0;
+    letter-spacing: -0.01em;
+}
+
+.about-underline {
+    width: 28px;
+    height: 3px;
+    background-color: var(--accent-blue);
+    border-radius: 2px;
+    margin-top: -10px;
+}
+
+.about-description {
+    font-size: 15px;
+    line-height: 1.65;
+    color: var(--text-secondary);
+    margin: 0;
+}
+
+.about-link {
+    font-size: 15px;
+    font-weight: 600;
+    color: var(--accent-blue);
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    transition: gap 0.2s ease;
+    margin-top: 8px;
+}
+
+.about-link span {
+    transition: transform 0.2s ease;
+}
+
+.about-link:hover {
+    color: var(--accent-blue-hover);
+    gap: 10px;
+}
+
+.about-link:hover span {
+    transform: translateX(2px);
+}
+
+/* Right Column: Three Cards Grid */
+.about-card-col {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+/* Glassmorphism Info Card */
+.about-info-card {
+    background: rgba(15, 23, 42, 0.4);
+    border: 1px solid var(--card-border);
+    border-radius: 16px;
+    padding: 32px 24px;
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    backdrop-filter: blur(12px);
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    box-sizing: border-box;
+}
+
+.about-info-card:hover {
+    border-color: rgba(37, 99, 235, 0.3);
+    transform: translateY(-5px);
+    background: rgba(15, 23, 42, 0.55);
+    box-shadow: 
+        0 20px 40px rgba(0, 0, 0, 0.35),
+        0 0 24px rgba(37, 99, 235, 0.12);
+}
+
+/* Icons */
+.about-card-icon {
+    width: 48px;
+    height: 48px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    color: var(--accent-blue);
+    transition: transform 0.3s ease;
+}
+
+.about-info-card:hover .about-card-icon {
+    transform: scale(1.08);
+}
+
+.about-card-icon svg {
+    width: 32px;
+    height: 32px;
+    stroke-width: 1.75;
+}
+
+/* Card Content Details */
+.about-card-content {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.about-card-label {
+    font-size: 13px;
+    font-weight: 500;
+    color: var(--text-secondary);
+    letter-spacing: 0.02em;
+}
+
+.about-card-title {
+    font-size: 16px;
+    font-weight: 700;
+    color: var(--text-primary);
+    margin: 0;
+    line-height: 1.45;
+}
+
+.about-card-subtitle {
+    font-size: 13px;
+    color: var(--text-secondary);
+    margin: 0;
+    line-height: 1.45;
+    font-weight: 400;
+}
+
+/* Responsive Media Queries */
+@media (max-width: 992px) {
+    .about-section {
+        grid-template-columns: 1fr;
+        gap: 40px;
+        padding: 40px 24px 80px;
+    }
+    
+    .about-card-col {
+        gap: 16px;
+    }
+}
+
+@media (max-width: 768px) {
+    .about-card-col {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 576px) {
+    .about-card-col {
+        grid-template-columns: 1fr;
+    }
+    
+    .about-info-card {
+        padding: 24px 20px;
+        gap: 16px;
+    }
+    
+    .about-heading {
+        font-size: 28px;
+    }
+}
