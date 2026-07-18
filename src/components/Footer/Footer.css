@@ -1,0 +1,220 @@
+/* Redesigned Footer Section */
+.footer-section {
+    background-color: #070B17;
+    border-top: 1px solid rgba(255, 255, 255, 0.04);
+    padding: 40px 24px 60px;
+    box-sizing: border-box;
+    position: relative;
+    z-index: 10;
+}
+
+/* Container */
+.footer-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 32px;
+    box-sizing: border-box;
+}
+
+/* Developer Name & Tagline */
+.footer-header {
+    text-align: center;
+}
+
+.footer-logo {
+    font-size: 28px;
+    font-weight: 800;
+    color: #ffffff;
+    margin: 0 0 10px 0;
+    letter-spacing: -0.02em;
+}
+
+.footer-tagline {
+    font-size: 14.5px;
+    color: #94a3b8;
+    line-height: 1.6;
+    margin: 0 auto;
+    max-width: 500px;
+}
+
+/* Navigation Links */
+.footer-nav {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 32px;
+    flex-wrap: wrap;
+}
+
+.footer-nav-link {
+    color: #94a3b8;
+    text-decoration: none;
+    font-size: 15px;
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+.footer-nav-link:hover {
+    color: #2563EB;
+}
+
+/* Details Row (Socials & Location) */
+.footer-details-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    margin-top: 12px;
+    box-sizing: border-box;
+}
+
+.footer-socials {
+    display: flex;
+    gap: 12px;
+}
+
+.footer-social-btn {
+    width: 38px;
+    height: 38px;
+    border-radius: 10px;
+    background: rgba(255, 255, 255, 0.02);
+    border: 1px solid rgba(255, 255, 255, 0.06);
+    color: #94a3b8;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+}
+
+.footer-social-btn svg {
+    width: 16px;
+    height: 16px;
+}
+
+.footer-social-btn:hover {
+    color: #ffffff;
+    border-color: rgba(37, 99, 235, 0.4);
+    background: rgba(37, 99, 235, 0.08);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 12px rgba(37, 99, 235, 0.15);
+}
+
+.footer-location {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    color: #94a3b8;
+    font-size: 14.5px;
+    font-weight: 500;
+}
+
+.location-pin {
+    font-size: 15px;
+}
+
+/* Gradient Bottom Divider */
+.footer-divider {
+    width: 100%;
+    height: 1px;
+    background: linear-gradient(90deg, rgba(255, 255, 255, 0.01) 0%, rgba(255, 255, 255, 0.06) 50%, rgba(255, 255, 255, 0.01) 100%);
+    margin-top: 8px;
+}
+
+/* Copyright Details */
+.footer-copyright {
+    color: #475569;
+    font-size: 13.5px;
+    text-align: center;
+}
+
+.footer-copyright p {
+    margin: 0;
+}
+
+/* Floating Back to Top Button */
+.floating-back-to-top {
+    position: fixed;
+    bottom: 40px;
+    right: 40px;
+    width: 44px;
+    height: 44px;
+    background-color: rgba(15, 23, 42, 0.5);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 12px;
+    color: #ffffff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    backdrop-filter: blur(10px);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    z-index: 99;
+    text-decoration: none;
+}
+
+.floating-back-to-top svg {
+    width: 16px;
+    height: 16px;
+    transition: transform 0.3s ease;
+}
+
+.floating-back-to-top:hover {
+    background-color: #2563EB;
+    border-color: #2563EB;
+    color: #ffffff;
+    transform: translateY(-4px);
+    box-shadow: 
+        0 8px 24px rgba(37, 99, 235, 0.45),
+        0 0 12px rgba(37, 99, 235, 0.2);
+}
+
+.floating-back-to-top:hover svg {
+    transform: translateY(-2px);
+}
+
+/* Responsive Media Queries */
+@media (max-width: 768px) {
+    .footer-details-row {
+        flex-direction: column;
+        gap: 20px;
+        align-items: center;
+    }
+    
+    .footer-nav {
+        gap: 20px;
+    }
+}
+
+@media (max-width: 576px) {
+    .footer-section {
+        padding: 40px 16px 40px;
+    }
+    
+    .footer-logo {
+        font-size: 24px;
+    }
+    
+    .footer-tagline {
+        font-size: 13.5px;
+    }
+    
+    .footer-nav {
+        gap: 16px;
+    }
+    
+    .footer-nav-link {
+        font-size: 14px;
+    }
+    
+    .floating-back-to-top {
+        bottom: 20px;
+        right: 20px;
+        width: 38px;
+        height: 38px;
+        border-radius: 8px;
+    }
+}
