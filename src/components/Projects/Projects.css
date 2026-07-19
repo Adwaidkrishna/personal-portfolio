@@ -478,13 +478,17 @@
 @media (max-width: 1024px) {
     .project-card {
         grid-template-columns: 1fr;
-        gap: 32px;
-        padding: 30px;
+        gap: 36px;
+        padding: 36px;
     }
     
     .project-mockup-container {
-        max-width: 700px;
+        max-width: 100%;
         margin: 0 auto;
+    }
+
+    .project-details {
+        margin-top: 10px;
     }
 }
 
@@ -493,9 +497,15 @@
         font-size: 28px;
     }
     
+    .project-card {
+        padding: 30px;
+        gap: 28px;
+    }
+
     .project-features-grid {
         grid-template-columns: 1fr;
         gap: 12px;
+        margin-bottom: 24px;
     }
     
     .project-title {
@@ -504,33 +514,50 @@
     
     .project-description {
         font-size: 14.5px;
+        margin-bottom: 20px;
+    }
+
+    .project-tech-list {
+        margin-bottom: 28px;
     }
 }
 
-@media (max-width: 576px) {
+@media (max-width: 480px) {
     .projects-header {
         flex-direction: column;
         align-items: flex-start;
-        gap: 16px;
+        gap: 12px;
+        margin-bottom: 28px;
     }
-    
+
     .projects-section {
-        padding: 30px 16px 60px;
+        padding: 40px 16px 60px;
     }
     
     .project-card {
-        padding: 20px;
+        padding: 20px 16px;
+        border-radius: 16px;
+        gap: 24px;
     }
     
+    .dashboard-mockup {
+        height: 180px;
+        aspect-ratio: auto;
+    }
+
+    .db-table-container {
+        display: none; /* Hide table to prevent overflow in fixed height */
+    }
+
     .db-sidebar {
-        width: 44px; /* Icon-only sidebar on small screens */
-        padding: 10px 4px;
-        gap: 12px;
+        width: 40px;
+        padding: 10px 2px;
+        gap: 10px;
     }
     
     .logo-text, 
     .db-nav-item span {
-        display: none; /* Hide text label */
+        display: none;
     }
     
     .db-logo {
@@ -540,31 +567,78 @@
     
     .db-nav-item {
         justify-content: center;
-        padding: 6px 0;
+        padding: 4px 0;
     }
     
     .db-stats-grid {
         grid-template-columns: repeat(2, 1fr);
         gap: 6px;
-        padding: 10px 12px;
+        padding: 8px 10px;
+        flex: 1; /* Allow stats to occupy remaining space */
     }
     
     .db-stat-card {
         padding: 6px 8px;
+        justify-content: center;
     }
     
+    .stat-label {
+        font-size: 7.5px;
+    }
+
     .stat-value {
-        font-size: 10px;
+        font-size: 9.5px;
+    }
+
+    .project-title {
+        font-size: 20px;
+        margin-bottom: 10px;
+    }
+
+    .project-description {
+        font-size: 13.5px;
+        line-height: 1.55;
+        margin-bottom: 20px;
+    }
+
+    .project-features-grid {
+        gap: 10px;
+        margin-bottom: 20px;
+    }
+
+    .feature-item {
+        font-size: 12.5px;
+        gap: 8px;
+    }
+
+    .check-icon {
+        width: 14px;
+        height: 14px;
+        font-size: 8px;
+    }
+
+    .project-tech-list {
+        gap: 6px;
+        margin-bottom: 24px;
+    }
+
+    .tech-tag {
+        font-size: 11px;
+        padding: 5px 10px;
+        border-radius: 5px;
     }
     
     .project-actions {
         flex-direction: column;
         gap: 10px;
+        width: 100%;
     }
     
     .btn-demo, 
     .btn-github {
         width: 100%;
         justify-content: center;
+        padding: 12px 20px;
+        font-size: 13.5px;
     }
 }
