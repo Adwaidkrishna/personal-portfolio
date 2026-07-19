@@ -51,7 +51,7 @@ function Contact() {
                             </div>
                             <div className="card-content">
                                 <span className="card-label">Location</span>
-                                <span className="card-value">Kerala, India</span>
+                                <span className="card-value">Kozhikode, Kerala, India</span>
                             </div>
                         </div>
 

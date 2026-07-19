@@ -47,7 +47,7 @@ function Footer() {
 
                     <div className="footer-location">
                         <span className="location-pin">📍</span>
-                        <span className="location-text">Kerala, India</span>
+                        <span className="location-text">Kozhikode, Kerala, India</span>
                     </div>
                 </div>
 
