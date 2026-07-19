@@ -245,18 +245,6 @@
         height: 2px;
     }
 
-    .header-actions {
-        margin-right: 40px;
-        /* Space for hamburger button */
-    }
-}
-
-@media (max-width: 550px) {
-    .brand-name {
-        display: none;
-        /* Hide name on small screens, keep only colored G logo */
-    }
-
     .connect-me-btn span {
         display: none;
         /* Hide text, make circular icon */
@@ -268,6 +256,15 @@
     }
 
     .header-actions {
+        margin-right: 40px;
+        /* Space for hamburger button */
         gap: 8px;
+    }
+}
+
+@media (max-width: 550px) {
+    .brand-name {
+        display: block;
+        font-size: 16px;
     }
 }
