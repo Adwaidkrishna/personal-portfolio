@@ -14,7 +14,9 @@ function Navbar() {
             <div className="header-container">
                 {/* Brand Name */}
                 <a href="#" className="brand-link">
-                    <span className="brand-name">Adwaid Krishna</span>
+                    <span className="brand-name">
+                        <span className="brand-accent">Adwaid</span> Krishna
+                    </span>
                 </a>
 
                 {/* CSS-Only Mobile Menu Toggle */}
