@@ -44,7 +44,7 @@ function About() {
                     </div>
                     <div className="about-card-content">
                         <span className="about-card-label">Location</span>
-                        <h4 className="about-card-title">Kerala, India</h4>
+                        <h4 className="about-card-title">Kozhikode, Kerala, India</h4>
                     </div>
                 </div>
 
