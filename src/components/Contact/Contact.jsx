@@ -24,7 +24,7 @@ function Contact() {
                             </div>
                             <div className="card-content">
                                 <span className="card-label">Email</span>
-                                <a href="mailto:adwaidkrishna@example.com" className="card-value">adwaidkrishna@example.com</a>
+                                <a href="mailto:adwaidkrishna2@gmail.com" className="card-value">adwaidkrishna2@gmail.com</a>
                             </div>
                         </div>
 
@@ -37,7 +37,7 @@ function Contact() {
                             </div>
                             <div className="card-content">
                                 <span className="card-label">Phone</span>
-                                <a href="tel:+919876543210" className="card-value">+91 98765 43210</a>
+                                <a href="tel:+916238937357" className="card-value">+91 62389 37357</a>
                             </div>
                         </div>
 
@@ -72,12 +72,12 @@ function Contact() {
 
                     {/* Social Square Buttons */}
                     <div className="contact-social-buttons">
-                        <a href="https://github.com/" target="_blank" rel="noopener noreferrer" className="social-square-btn" aria-label="GitHub">
+                        <a href="https://github.com/Adwaidkrishna" target="_blank" rel="noopener noreferrer" className="social-square-btn" aria-label="GitHub">
                             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                                 <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path>
                             </svg>
                         </a>
-                        <a href="https://linkedin.com/" target="_blank" rel="noopener noreferrer" className="social-square-btn" aria-label="LinkedIn">
+                        <a href="https://www.linkedin.com/in/adwaid-krishna" target="_blank" rel="noopener noreferrer" className="social-square-btn" aria-label="LinkedIn">
                             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                                 <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path>
                                 <rect x="2" y="9" width="4" height="12"></rect>
@@ -89,7 +89,7 @@ function Contact() {
                                 <path d="M13.483 0a1.374 1.374 0 0 0-.961.414l-9.777 9.778a3.75 3.75 0 0 0 0 5.304l3.194 3.194a3.75 3.75 0 0 0 5.304 0l7.162-7.163a1.373 1.373 0 1 0-1.94-1.94l-7.162 7.162a1.002 1.002 0 0 1-1.417 0l-3.193-3.193a1.002 1.002 0 0 1 0-1.417l9.777-9.777A1.372 1.372 0 0 0 13.483 0zm-1.077 4.757a1.375 1.375 0 0 0-.228.029 1.373 1.373 0 1 0 .228-.029zm1.884 1.884a1.375 1.375 0 0 0-.228.029 1.373 1.373 0 1 0 .228-.029z"/>
                             </svg>
                         </a>
-                        <a href="mailto:adwaidkrishna@example.com" className="social-square-btn" aria-label="Email">
+                        <a href="mailto:adwaidkrishna2@gmail.com" className="social-square-btn" aria-label="Email">
                             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                                 <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
                                 <polyline points="22,6 12,13 2,6"></polyline>
