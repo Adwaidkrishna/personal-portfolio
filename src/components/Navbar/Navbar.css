@@ -123,8 +123,8 @@
     background-color: rgba(255, 255, 255, 0.05);
 }
 
-/* Resume Button */
-.resume-download-btn {
+/* Connect Me Button */
+.connect-me-btn {
     font-family: 'Inter', system-ui, -apple-system, sans-serif;
     display: flex;
     align-items: center;
@@ -141,13 +141,13 @@
     transition: all 0.2s ease;
 }
 
-.resume-download-btn:hover {
+.connect-me-btn:hover {
     background-color: var(--accent-blue-hover);
     transform: translateY(-1px);
     box-shadow: 0 6px 20px rgba(37, 99, 235, 0.45);
 }
 
-.download-icon {
+.connect-icon {
     display: block;
 }
 
@@ -257,12 +257,12 @@
         /* Hide name on small screens, keep only colored G logo */
     }
 
-    .resume-download-btn span {
+    .connect-me-btn span {
         display: none;
         /* Hide text, make circular icon */
     }
 
-    .resume-download-btn {
+    .connect-me-btn {
         padding: 10px;
         border-radius: 50%;
     }

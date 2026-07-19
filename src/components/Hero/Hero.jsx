@@ -1,5 +1,6 @@
 import React from 'react';
 import './Hero.css';
+import heroImage from '../../assets/hero.jpg';
 
 function Hero({ name, role, about }) {
     return (
@@ -76,18 +77,7 @@ function Hero({ name, role, about }) {
 
                     {/* Circular Image */}
                     <img
-                        src="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wCEAAkGBwgHBgkIBwgKCgkLDRYPDQwMDRsUFRAWIB0iIiAdHx8kKDQ
-                        sJCYxJx8fLT0tMTU3Ojo6Iys/RD84QzQ5OjcBCgoKDQwNGg8PGjclHyU3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nz
-                        c3Nzc3Nzc3N//AABEIAJQAlAMBIgACEQEDEQH/xAAcAAABBQEBAQAAAAAAAAAAAAAAAQMEBQYCBwj/xAA7EAABAwIEAwUHAwMCBwAAAAABAAIDB
-                        BEFEiExBkFREyJhcZEUMkJSgaHRI7HBFeHwYqIlM3KCktLx/8QAGgEAAQUBAAAAAAAAAAAAAAAABAABAgMFBv/EADARAAICAgAEBAQFBQEAAAAA
-                        AAABAgMEEQUSITETQVFhIjJxgSMkM0KxBjSRwfAU/9oADAMBAAIRAxEAPwD0pCEKBUC7gbmnYPFcJ+iF5r9G3/hIdLbKDGIzFWyNtZpOYHrdVz1
-                        p+I6XtaQTsGsXvf8ATzWYK5POo8K1+51mFYrKl7A3ZR6sqQNlErntaLuOgQiTb0g2L0xhg1Cn0+wWbkxyngLmyMlcdTdo/f8O/8ABmrxnEcSgkbk
-                        sVdO6N8UsTnB7HAtdmLtCDY6L07hviWlxaF0MhEdXDpJG7n/AKh1CqypVwfiRjsKvsfJPfkelJUkfdYAlR8XpCWhN3AhCEy4IQhIQIQlTDghCEgC
-                        iVd5AD0Cn7pjD/fHkd1AtsK6p9B219W0S4vE3K0eAQpT4t7p6/f1U4u2jC5a2jR4X/ZfwlE18dK500dTKP05mOIafFp3CqMQxSDh6gfUSnM46N
-                        aPed4Lzavxipxad00riBfuxg3DR4LPysfw7VZB9jXwcnxaXD1PRMR4uw2jkMcbjI/mWDuhVdTxjhzomPhlc2Rx72duwv15rA1sTY5wAb33UeR/d
-                        sW6HQLRjRvqURrrtZvsR4uw9lG90snZEjvP5HwCxT8cwbE6wNlhEbydJDob/ZUKs8D4a/r1HJV1LeG12gHxHkVfkxXh6aKsa183Vfsa9lq6WPL
-                        lc4i2pXpPDmLNxagjk3ewZXeaw+GVsNZh8VZSOuxzTbqDyNupWp4XpvZKSVw94yG/oFiZ9SjZGUF1OhwexqUoz7GvY5KkicO7onVpY0udGKx5sV
-                        +xfoUiFogwQhCQhUJEJDH//Z"
+                        src={heroImage}
                         alt="Profile"
                         className="profile-circle"
                     />

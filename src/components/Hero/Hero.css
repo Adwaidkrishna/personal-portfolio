@@ -311,7 +311,7 @@
     }
 
     .hero-title {
-        font-size: 44px;
+        font-size: 38px;
     }
 
     .profile-circle {
@@ -360,5 +360,42 @@
     .hero-socials {
         flex-direction: column;
         gap: 10px;
+    }
+}
+
+@media (max-width: 400px) {
+    .hero-title {
+        font-size: 32px;
+    }
+
+    .profile-circle {
+        width: 190px;
+        height: 190px;
+    }
+
+    .tech-card {
+        width: 40px;
+        height: 40px;
+    }
+
+    .card-node {
+        top: 0px;
+        left: -10px;
+    }
+
+    .card-react {
+        top: 20px;
+        right: -12px;
+    }
+
+    .card-mongo {
+        bottom: 5px;
+        left: -12px;
+    }
+
+    .card-express {
+        bottom: 0px;
+        right: -10px;
+        font-size: 13px;
     }
 }
