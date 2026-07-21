@@ -68,7 +68,7 @@ function Contact() {
                 <div className="contact-left">
                     <h2 className="contact-main-heading">Let's Work Together</h2>
                     <p className="contact-subtext">
-                        I am currently open to new opportunities, freelance projects, or collaborations. 
+                        I am currently open to new opportunities, freelance projects, or collaborations.
                         Feel free to drop a message, and I'll get back to you as soon as possible!
                     </p>
 
@@ -145,7 +145,7 @@ function Contact() {
                         </a>
                         <a href="https://leetcode.com/" target="_blank" rel="noopener noreferrer" className="social-square-btn" aria-label="LeetCode">
                             <svg viewBox="0 0 24 24" fill="currentColor">
-                                <path d="M13.483 0a1.374 1.374 0 0 0-.961.414l-9.777 9.778a3.75 3.75 0 0 0 0 5.304l3.194 3.194a3.75 3.75 0 0 0 5.304 0l7.162-7.163a1.373 1.373 0 1 0-1.94-1.94l-7.162 7.162a1.002 1.002 0 0 1-1.417 0l-3.193-3.193a1.002 1.002 0 0 1 0-1.417l9.777-9.777A1.372 1.372 0 0 0 13.483 0zm-1.077 4.757a1.375 1.375 0 0 0-.228.029 1.373 1.373 0 1 0 .228-.029zm1.884 1.884a1.375 1.375 0 0 0-.228.029 1.373 1.373 0 1 0 .228-.029z"/>
+                                <path d="M13.483 0a1.374 1.374 0 0 0-.961.414l-9.777 9.778a3.75 3.75 0 0 0 0 5.304l3.194 3.194a3.75 3.75 0 0 0 5.304 0l7.162-7.163a1.373 1.373 0 1 0-1.94-1.94l-7.162 7.162a1.002 1.002 0 0 1-1.417 0l-3.193-3.193a1.002 1.002 0 0 1 0-1.417l9.777-9.777A1.372 1.372 0 0 0 13.483 0zm-1.077 4.757a1.375 1.375 0 0 0-.228.029 1.373 1.373 0 1 0 .228-.029zm1.884 1.884a1.375 1.375 0 0 0-.228.029 1.373 1.373 0 1 0 .228-.029z" />
                             </svg>
                         </a>
                         <a href="mailto:adwaidkrishna2@gmail.com" className="social-square-btn" aria-label="Email">
@@ -163,26 +163,26 @@ function Contact() {
                         <form className="contact-form-redesign" onSubmit={handleSubmit}>
                             <div className="form-row-redesign">
                                 <div className="form-group-redesign">
-                                    <input 
-                                        type="text" 
-                                        id="name" 
-                                        name="name" 
-                                        required 
-                                        placeholder=" " 
-                                        className="form-input-redesign" 
+                                    <input
+                                        type="text"
+                                        id="name"
+                                        name="name"
+                                        required
+                                        placeholder=" "
+                                        className="form-input-redesign"
                                         value={formData.name}
                                         onChange={handleChange}
                                     />
                                     <label htmlFor="name" className="form-label-redesign">Full Name</label>
                                 </div>
                                 <div className="form-group-redesign">
-                                    <input 
-                                        type="email" 
-                                        id="email" 
-                                        name="email" 
-                                        required 
-                                        placeholder=" " 
-                                        className="form-input-redesign" 
+                                    <input
+                                        type="email"
+                                        id="email"
+                                        name="email"
+                                        required
+                                        placeholder=" "
+                                        className="form-input-redesign"
                                         value={formData.email}
                                         onChange={handleChange}
                                     />
@@ -191,13 +191,13 @@ function Contact() {
                             </div>
 
                             <div className="form-group-redesign">
-                                <input 
-                                    type="text" 
-                                    id="subject" 
-                                    name="subject" 
-                                    required 
-                                    placeholder=" " 
-                                    className="form-input-redesign" 
+                                <input
+                                    type="text"
+                                    id="subject"
+                                    name="subject"
+                                    required
+                                    placeholder=" "
+                                    className="form-input-redesign"
                                     value={formData.subject}
                                     onChange={handleChange}
                                 />
@@ -205,12 +205,12 @@ function Contact() {
                             </div>
 
                             <div className="form-group-redesign">
-                                <textarea 
-                                    id="message" 
-                                    name="message" 
-                                    rows="5" 
-                                    required 
-                                    placeholder=" " 
+                                <textarea
+                                    id="message"
+                                    name="message"
+                                    rows="5"
+                                    required
+                                    placeholder=" "
                                     className="form-textarea-redesign"
                                     value={formData.message}
                                     onChange={handleChange}
