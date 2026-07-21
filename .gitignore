@@ -1,20 +1,31 @@
-# Ignore node_modules in subfolders
+# Node modules
 **/node_modules/
 node_modules/
 
-# Ignore env files
+# Environment files
 **/.env
 **/.env.local
 **/.env.development.local
 **/.env.test.local
 **/.env.production.local
 
-# Ignore build outputs
+# Build directories
 **/dist/
 **/build/
 **/out/
 **/.vite/
 
-# System files
+# IDE/Editor configurations
+**/.vscode/
+**/.idea/
+**/*.suo
+**/*.ntvs*
+**/*.njsproj
+**/*.sln
+**/*.sw?
+
+# OS/System files
 **/.DS_Store
 **/Thumbs.db
+**/EHthumbs_db
+**/Desktop.ini
