@@ -1,0 +1,9 @@
+- [x] Delete nested portfolio/.git folder
+- [x] Move portfolio/backend to backend
+- [x] Move portfolio/frontend to frontend
+- [x] Move frontend/README.md to root README.md
+- [x] Delete empty portfolio directory
+- [x] Consolidate gitignore and delete redundant frontend/.gitignore
+- [x] Create docs/ folder with task.md and walkthrough.md
+- [x] Strip trailing slash from API URL in frontend
+- [x] Verify Vercel deployment
