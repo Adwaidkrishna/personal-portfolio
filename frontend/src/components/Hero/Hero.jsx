@@ -31,7 +31,7 @@ function Hero({ name, role, about }) {
                         </svg>
                         <span>View Projects</span>
                     </a>
-                    <a href="#resume" className="btn-secondary">
+                    <a href="/Adwaid_Krishna_Resume.pdf" download className="btn-secondary">
                         <svg viewBox="0 0 24 24" width="16" height="16" stroke="currentColor" strokeWidth="2.5" fill="none" strokeLinecap="round" strokeLinejoin="round">
                             <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" />
                             <polyline points="7 10 12 15 17 10" />

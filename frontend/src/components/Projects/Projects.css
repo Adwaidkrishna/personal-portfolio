@@ -642,3 +642,209 @@
         font-size: 13.5px;
     }
 }
+
+/* Demo badge for featured dashboard */
+.db-title-container {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.demo-badge {
+    font-size: 11px;
+    font-weight: 600;
+    color: #eab308;
+    background: rgba(234, 179, 8, 0.08);
+    border: 1px solid rgba(234, 179, 8, 0.25);
+    padding: 3px 10px;
+    border-radius: 6px;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    backdrop-filter: blur(4px);
+}
+
+/* Other Projects Section styling */
+.secondary-projects-header {
+    margin-top: 60px;
+    margin-bottom: 24px;
+    display: flex;
+    justify-content: flex-start;
+}
+
+.secondary-projects-heading {
+    font-size: 24px;
+    font-weight: 650;
+    color: var(--text-primary);
+    margin: 0;
+    position: relative;
+    padding-bottom: 8px;
+}
+
+.secondary-projects-heading::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 20px;
+    height: 2.5px;
+    background-color: var(--accent-blue);
+    border-radius: 1px;
+}
+
+.secondary-projects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+    gap: 24px;
+    margin-bottom: 40px;
+}
+
+/* Secondary project card */
+.secondary-project-card {
+    background-color: rgba(9, 13, 24, 0.65);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    border-radius: 16px;
+    padding: 28px;
+    backdrop-filter: blur(12px);
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    display: flex;
+    flex-direction: column;
+    box-sizing: border-box;
+}
+
+.secondary-project-card:hover {
+    border-color: rgba(37, 99, 235, 0.35);
+    transform: translateY(-4px);
+    box-shadow: 
+        0 16px 32px rgba(0, 0, 0, 0.4),
+        0 0 20px rgba(37, 99, 235, 0.08);
+}
+
+.sec-card-header {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 16px;
+}
+
+.sec-card-icon {
+    color: var(--accent-blue);
+    background: rgba(37, 99, 235, 0.08);
+    border: 1px solid rgba(37, 99, 235, 0.15);
+    width: 42px;
+    height: 42px;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.sec-project-title {
+    font-size: 18px;
+    font-weight: 600;
+    color: var(--text-primary);
+    margin: 0;
+}
+
+.sec-project-description {
+    font-size: 14px;
+    line-height: 1.55;
+    color: var(--text-secondary);
+    margin: 0 0 20px 0;
+    flex-grow: 1;
+}
+
+.sec-project-tech {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+    margin-bottom: 24px;
+}
+
+.sec-tech-tag {
+    font-size: 11.5px;
+    font-weight: 500;
+    color: var(--text-secondary);
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.06);
+    padding: 4px 10px;
+    border-radius: 6px;
+}
+
+.sec-project-actions {
+    display: flex;
+    width: 100%;
+}
+
+.sec-btn-github {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    background: rgba(255, 255, 255, 0.02);
+    border: 1px solid rgba(255, 255, 255, 0.06);
+    color: var(--text-primary);
+    padding: 10px 16px;
+    border-radius: 8px;
+    font-size: 13.5px;
+    font-weight: 550;
+    text-decoration: none;
+    transition: all 0.25s ease;
+}
+
+.sec-btn-github:hover {
+    background: rgba(255, 255, 255, 0.07);
+    border-color: rgba(255, 255, 255, 0.15);
+}
+
+/* Projects Section Footer Link */
+.projects-footer {
+    display: flex;
+    justify-content: center;
+    margin-top: 40px;
+}
+
+.github-more-link {
+    color: var(--accent-blue);
+    font-size: 15px;
+    font-weight: 600;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.github-more-link:hover {
+    color: var(--text-primary);
+    gap: 10px;
+}
+
+.github-more-link .arrow {
+    transition: transform 0.25s ease;
+}
+
+.github-more-link:hover .arrow {
+    transform: translateX(3px);
+}
+
+/* Mobile Responsiveness for Secondary Cards */
+@media (max-width: 480px) {
+    .secondary-project-card {
+        padding: 20px;
+    }
+    
+    .sec-project-title {
+        font-size: 16.5px;
+    }
+    
+    .sec-project-description {
+        font-size: 13.5px;
+        line-height: 1.5;
+    }
+    
+    .sec-tech-tag {
+        font-size: 11px;
+        padding: 3px 8px;
+    }
+}

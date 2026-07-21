@@ -95,7 +95,10 @@ function Projects() {
                         <div className="db-main">
                             {/* Top header bar */}
                             <div className="db-header">
-                                <span className="db-title">Dashboard</span>
+                                <div className="db-title-container">
+                                    <span className="db-title">Dashboard</span>
+                                    <span className="demo-badge">Demo Data</span>
+                                </div>
                                 <div className="db-header-actions">
                                     <div className="db-search">
                                         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
@@ -257,6 +260,132 @@ function Projects() {
                         </a>
                     </div>
                 </div>
+            </div>
+
+            {/* Other Projects Section */}
+            <div className="secondary-projects-header">
+                <h3 className="secondary-projects-heading">Other Projects</h3>
+            </div>
+            
+            <div className="secondary-projects-grid">
+                {/* Netflix Clone Project Card */}
+                <div className="secondary-project-card">
+                    <div className="sec-card-header">
+                        <div className="sec-card-icon">
+                            <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+                                <rect x="2" y="2" width="20" height="20" rx="2.18" ry="2.18"></rect>
+                                <line x1="7" y1="2" x2="7" y2="22"></line>
+                                <line x1="17" y1="2" x2="17" y2="22"></line>
+                                <line x1="2" y1="12" x2="22" y2="12"></line>
+                                <line x1="2" y1="7" x2="7" y2="7"></line>
+                                <line x1="2" y1="17" x2="7" y2="17"></line>
+                                <line x1="17" y1="17" x2="22" y2="17"></line>
+                                <line x1="17" y1="7" x2="22" y2="7"></line>
+                            </svg>
+                        </div>
+                        <h4 className="sec-project-title">Netflix UI Clone</h4>
+                    </div>
+                    
+                    <p className="sec-project-description">
+                        A responsive static front-end clone of the Netflix landing and login pages built with clean HTML/CSS and Bootstrap.
+                    </p>
+                    
+                    <div className="sec-project-tech">
+                        <span className="sec-tech-tag">HTML</span>
+                        <span className="sec-tech-tag">CSS</span>
+                        <span className="sec-tech-tag">Bootstrap</span>
+                    </div>
+                    
+                    <div className="sec-project-actions">
+                        <a href="https://github.com/Adwaidkrishna/netflix" target="_blank" rel="noopener noreferrer" className="sec-btn-github">
+                            <svg viewBox="0 0 24 24" width="14" height="14" fill="currentColor" className="btn-icon">
+                                <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"></path>
+                            </svg>
+                            GitHub Repository
+                        </a>
+                    </div>
+                </div>
+
+                {/* Backend Authentication System Project Card */}
+                <div className="secondary-project-card">
+                    <div className="sec-card-header">
+                        <div className="sec-card-icon">
+                            <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+                                <rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect>
+                                <path d="M7 11V7a5 5 0 0 1 10 0v4"></path>
+                            </svg>
+                        </div>
+                        <h4 className="sec-project-title">Backend Auth System</h4>
+                    </div>
+                    
+                    <p className="sec-project-description">
+                        A secure backend authentication system implementing JWT token sessions, bcrypt password hashing, and input validation.
+                    </p>
+                    
+                    <div className="sec-project-tech">
+                        <span className="sec-tech-tag">Node.js</span>
+                        <span className="sec-tech-tag">Express</span>
+                        <span className="sec-tech-tag">MongoDB</span>
+                        <span className="sec-tech-tag">JWT</span>
+                        <span className="sec-tech-tag">Bcrypt</span>
+                    </div>
+                    
+                    <div className="sec-project-actions">
+                        <a href="https://github.com/Adwaidkrishna/badge-task" target="_blank" rel="noopener noreferrer" className="sec-btn-github">
+                            <svg viewBox="0 0 24 24" width="14" height="14" fill="currentColor" className="btn-icon">
+                                <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"></path>
+                            </svg>
+                            GitHub Repository
+                        </a>
+                    </div>
+                </div>
+
+                {/* TypePro (Typvora) Project Card */}
+                <div className="secondary-project-card">
+                    <div className="sec-card-header">
+                        <div className="sec-card-icon">
+                            <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+                                <circle cx="12" cy="12" r="4"></circle>
+                                <line x1="12" y1="1" x2="12" y2="3"></line>
+                                <line x1="12" y1="21" x2="12" y2="23"></line>
+                                <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                                <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                                <line x1="1" y1="12" x2="3" y2="12"></line>
+                                <line x1="21" y1="12" x2="23" y2="12"></line>
+                                <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                                <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                            </svg>
+                        </div>
+                        <h4 className="sec-project-title">TypePro (Typvora)</h4>
+                    </div>
+                    
+                    <p className="sec-project-description">
+                        An iOS-style glassmorphic typing practice app with mechanical key click audio, fluid caret motion, and Chart.js stats.
+                    </p>
+                    
+                    <div className="sec-project-tech">
+                        <span className="sec-tech-tag">JavaScript (ES6)</span>
+                        <span className="sec-tech-tag">HTML5 & CSS3</span>
+                        <span className="sec-tech-tag">Chart.js</span>
+                        <span className="sec-tech-tag">Vite</span>
+                    </div>
+                    
+                    <div className="sec-project-actions">
+                        <a href="https://github.com/Adwaidkrishna/typvora" target="_blank" rel="noopener noreferrer" className="sec-btn-github">
+                            <svg viewBox="0 0 24 24" width="14" height="14" fill="currentColor" className="btn-icon">
+                                <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"></path>
+                            </svg>
+                            GitHub Repository
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            {/* GitHub More Link Footer */}
+            <div className="projects-footer">
+                <a href="https://github.com/Adwaidkrishna" target="_blank" rel="noopener noreferrer" className="github-more-link">
+                    More projects on GitHub <span className="arrow">→</span>
+                </a>
             </div>
         </section>
     );

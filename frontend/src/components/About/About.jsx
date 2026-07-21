@@ -60,9 +60,9 @@ function About() {
                         </svg>
                     </div>
                     <div className="about-card-content">
-                        <span className="about-card-label">Experience</span>
-                        <h4 className="about-card-title">Fresher</h4>
-                        <p className="about-card-subtitle">Open to Opportunities</p>
+                        <span className="about-card-label">Learning Journey</span>
+                        <h4 className="about-card-title">MERN Stack Trainee</h4>
+                        <p className="about-card-subtitle">makBig · Calicut</p>
                     </div>
                 </div>
             </div>

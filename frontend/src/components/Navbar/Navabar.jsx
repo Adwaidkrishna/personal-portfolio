@@ -32,7 +32,7 @@ function Navbar() {
                     <a href="#about" className="nav-menu-item active" onClick={closeMenu}>About</a>
                     <a href="#projects" className="nav-menu-item" onClick={closeMenu}>Projects</a>
                     <a href="#skills" className="nav-menu-item" onClick={closeMenu}>Skills</a>
-                    <a href="#experience" className="nav-menu-item" onClick={closeMenu}>Experience</a>
+                    <a href="#learning-journey" className="nav-menu-item" onClick={closeMenu}>Learning Journey</a>
                     <a href="#contact" className="nav-menu-item" onClick={closeMenu}>Contact</a>
                 </nav>
 
