@@ -28,7 +28,8 @@ function Contact() {
 
         try {
             const apiUrl = import.meta.env.VITE_API_URL || 'http://localhost:5000';
-            const response = await fetch(`${apiUrl}/api/contact`, {
+            const cleanApiUrl = apiUrl.replace(/\/$/, '');
+            const response = await fetch(`${cleanApiUrl}/api/contact`, {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json'
