@@ -1,7 +1,66 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './Contact.css';
 
 function Contact() {
+    const [formData, setFormData] = useState({
+        name: '',
+        email: '',
+        subject: '',
+        message: ''
+    });
+    const [status, setStatus] = useState({
+        loading: false,
+        success: null,
+        message: ''
+    });
+
+    const handleChange = (e) => {
+        const { name, value } = e.target;
+        setFormData((prev) => ({
+            ...prev,
+            [name]: value
+        }));
+    };
+
+    const handleSubmit = async (e) => {
+        e.preventDefault();
+        setStatus({ loading: true, success: null, message: '' });
+
+        try {
+            const response = await fetch('http://localhost:5000/api/contact', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify(formData)
+            });
+
+            const data = await response.json();
+
+            if (response.ok && data.success) {
+                setStatus({
+                    loading: false,
+                    success: true,
+                    message: data.message || 'Message sent successfully! 🚀'
+                });
+                setFormData({ name: '', email: '', subject: '', message: '' });
+            } else {
+                setStatus({
+                    loading: false,
+                    success: false,
+                    message: data.message || 'Failed to send message.'
+                });
+            }
+        } catch (error) {
+            console.error('Error submitting form:', error);
+            setStatus({
+                loading: false,
+                success: false,
+                message: 'Something went wrong. Please try again later.'
+            });
+        }
+    };
+
     return (
         <section id="contact" className="contact-section">
             <div className="contact-container">
@@ -101,7 +160,7 @@ function Contact() {
                 {/* Right Column: Modern Contact Form */}
                 <div className="contact-right">
                     <div className="contact-glass-card">
-                        <form className="contact-form-redesign" onSubmit={(e) => e.preventDefault()}>
+                        <form className="contact-form-redesign" onSubmit={handleSubmit}>
                             <div className="form-row-redesign">
                                 <div className="form-group-redesign">
                                     <input 
@@ -111,6 +170,8 @@ function Contact() {
                                         required 
                                         placeholder=" " 
                                         className="form-input-redesign" 
+                                        value={formData.name}
+                                        onChange={handleChange}
                                     />
                                     <label htmlFor="name" className="form-label-redesign">Full Name</label>
                                 </div>
@@ -122,6 +183,8 @@ function Contact() {
                                         required 
                                         placeholder=" " 
                                         className="form-input-redesign" 
+                                        value={formData.email}
+                                        onChange={handleChange}
                                     />
                                     <label htmlFor="email" className="form-label-redesign">Email Address</label>
                                 </div>
@@ -135,6 +198,8 @@ function Contact() {
                                     required 
                                     placeholder=" " 
                                     className="form-input-redesign" 
+                                    value={formData.subject}
+                                    onChange={handleChange}
                                 />
                                 <label htmlFor="subject" className="form-label-redesign">Subject</label>
                             </div>
@@ -147,17 +212,25 @@ function Contact() {
                                     required 
                                     placeholder=" " 
                                     className="form-textarea-redesign"
+                                    value={formData.message}
+                                    onChange={handleChange}
                                 ></textarea>
                                 <label htmlFor="message" className="form-label-redesign">Message</label>
                             </div>
 
-                            <button type="submit" className="btn-send-message">
-                                <span>Send Message</span>
+                            <button type="submit" className="btn-send-message" disabled={status.loading}>
+                                <span>{status.loading ? 'Sending...' : 'Send Message'}</span>
                                 <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" className="send-msg-icon">
                                     <line x1="22" y1="2" x2="11" y2="13"></line>
                                     <polygon points="22 2 15 22 11 13 2 9 22 2"></polygon>
                                 </svg>
                             </button>
+
+                            {status.message && (
+                                <div className={`form-status-message ${status.success ? 'status-success' : 'status-error'}`}>
+                                    {status.message}
+                                </div>
+                            )}
                         </form>
                     </div>
                 </div>
