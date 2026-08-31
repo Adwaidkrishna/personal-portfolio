@@ -30,7 +30,7 @@ function About() {
                     <div className="about-card-content">
                         <span className="about-card-label">Education</span>
                         <h4 className="about-card-title">Diploma in Electrical & Electronics Engineering</h4>
-                        <p className="about-card-subtitle">Vadagara Model Polytechnic College</p>
+                        <p className="about-card-subtitle">Vadakara Model Polytechnic College</p>
                     </div>
                 </div>
 
@@ -48,7 +48,7 @@ function About() {
                     </div>
                 </div>
 
-                {/* Experience Card */}
+                {/* Internship Card */}
                 <div className="about-info-card">
                     <div className="about-card-icon">
                         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
@@ -60,9 +60,9 @@ function About() {
                         </svg>
                     </div>
                     <div className="about-card-content">
-                        <span className="about-card-label">Learning Journey</span>
-                        <h4 className="about-card-title">MERN Stack Trainee</h4>
-                        <p className="about-card-subtitle">makBig · Calicut</p>
+                        <span className="about-card-label">Internship</span>
+                        <h4 className="about-card-title">Full Stack Web Development</h4>
+                        <p className="about-card-subtitle">Future By Catalyst · 11 Months</p>
                     </div>
                 </div>
             </div>

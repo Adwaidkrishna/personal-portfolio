@@ -1,8 +1,30 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import './Navbar.css';
 
 function Navbar() {
-    const closeMenu = () => {
+    const [activeSection, setActiveSection] = useState('about');
+
+    useEffect(() => {
+        const handleScroll = () => {
+            const sections = ['about', 'projects', 'skills', 'learning-journey', 'contact'];
+            const scrollPosition = window.scrollY + 120;
+
+            for (let i = sections.length - 1; i >= 0; i--) {
+                const section = document.getElementById(sections[i]);
+                if (section && section.offsetTop <= scrollPosition) {
+                    setActiveSection(sections[i]);
+                    break;
+                }
+            }
+        };
+
+        window.addEventListener('scroll', handleScroll, { passive: true });
+        handleScroll();
+        return () => window.removeEventListener('scroll', handleScroll);
+    }, []);
+
+    const closeMenu = (sectionId) => {
+        if (sectionId) setActiveSection(sectionId);
         const checkbox = document.getElementById('menu-toggle');
         if (checkbox) {
             checkbox.checked = false;
@@ -13,7 +35,7 @@ function Navbar() {
         <header className="site-header">
             <div className="header-container">
                 {/* Brand Name */}
-                <a href="#" className="brand-link">
+                <a href="#" className="brand-link" onClick={() => closeMenu('')}>
                     <span className="brand-name">
                         <span className="brand-accent">Adwaid</span> Krishna
                     </span>
@@ -29,11 +51,11 @@ function Navbar() {
 
                 {/* Center Links */}
                 <nav className="nav-menu">
-                    <a href="#about" className="nav-menu-item active" onClick={closeMenu}>About</a>
-                    <a href="#projects" className="nav-menu-item" onClick={closeMenu}>Projects</a>
-                    <a href="#skills" className="nav-menu-item" onClick={closeMenu}>Skills</a>
-                    <a href="#learning-journey" className="nav-menu-item" onClick={closeMenu}>Learning Journey</a>
-                    <a href="#contact" className="nav-menu-item" onClick={closeMenu}>Contact</a>
+                    <a href="#about" className={`nav-menu-item ${activeSection === 'about' ? 'active' : ''}`} onClick={() => closeMenu('about')}>About</a>
+                    <a href="#projects" className={`nav-menu-item ${activeSection === 'projects' ? 'active' : ''}`} onClick={() => closeMenu('projects')}>Projects</a>
+                    <a href="#skills" className={`nav-menu-item ${activeSection === 'skills' ? 'active' : ''}`} onClick={() => closeMenu('skills')}>Skills</a>
+                    <a href="#learning-journey" className={`nav-menu-item ${activeSection === 'learning-journey' ? 'active' : ''}`} onClick={() => closeMenu('learning-journey')}>Learning Journey</a>
+                    <a href="#contact" className={`nav-menu-item ${activeSection === 'contact' ? 'active' : ''}`} onClick={() => closeMenu('contact')}>Contact</a>
                 </nav>
 
                 {/* Right Actions */}
@@ -54,7 +76,7 @@ function Navbar() {
                     </button>
 
                     {/* Connect Me Button */}
-                    <a href="#contact" className="connect-me-btn">
+                    <a href="#contact" className="connect-me-btn" onClick={() => closeMenu('contact')}>
                         <svg viewBox="0 0 24 24" width="16" height="16" stroke="currentColor" strokeWidth="2" fill="none" strokeLinecap="round" strokeLinejoin="round" className="connect-icon">
                             <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z" />
                         </svg>

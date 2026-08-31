@@ -21,7 +21,6 @@ function Skills() {
                         <div className="skill-pill skill-html">HTML</div>
                         <div className="skill-pill skill-css">CSS</div>
                         <div className="skill-pill skill-bootstrap">Bootstrap</div>
-                        <div className="skill-pill skill-tailwind">Tailwind CSS</div>
                     </div>
                 </div>
 
@@ -76,8 +75,6 @@ function Skills() {
                     <div className="skills-list">
                         <div className="skill-pill skill-javascript">JavaScript</div>
                         <div className="skill-pill skill-python">Python</div>
-                        <div className="skill-pill skill-cpp">C++</div>
-                        <div className="skill-pill skill-java">Java</div>
                     </div>
                 </div>
             </div>

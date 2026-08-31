@@ -72,6 +72,7 @@
     background-color: var(--accent-blue);
     border-color: rgba(37, 99, 235, 0.25);
     box-shadow: 0 0 12px var(--accent-blue);
+    animation: pulseRing 2.5s infinite;
 }
 
 .marker-line {

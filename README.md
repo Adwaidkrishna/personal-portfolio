@@ -1,18 +1,101 @@
-# React + Vite
+# Adwaid Krishna — Personal Portfolio
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+> A modern, responsive personal portfolio website for Adwaid Krishna, MERN Stack Developer, built with React, Vite, Node.js, and Express.js.
 
-Currently, two official plugins are available:
+[![Live Demo](https://img.shields.io/badge/Live%20Demo-Vercel-blue?style=for-the-badge&logo=vercel)](https://personal-portfolio-ten-blue-35.vercel.app)
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+---
 
-## React Compiler
+## 🚀 Live Demo
 
-The React Compiler is enabled on this template. See [this documentation](https://react.dev/learn/react-compiler) for more information.
+Check out the deployed portfolio site here:  
+**[https://personal-portfolio-ten-blue-35.vercel.app](https://personal-portfolio-ten-blue-35.vercel.app)**
 
-Note: This will impact Vite dev & build performances.
+---
 
-## Expanding the ESLint configuration
+## 🛠️ Tech Stack
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+### Frontend
+- **Framework & Build**: React.js (ES6+), Vite
+- **Styling**: Modern Vanilla CSS3 (CSS Variables, Flexbox, CSS Grid, Glassmorphism, Micro-animations)
+- **Icons & Graphics**: Inline SVG vector graphics
+
+### Backend
+- **Runtime & Server**: Node.js, Express.js
+- **Services**: Contact form submission handler, REST API endpoints
+
+---
+
+## 📁 Folder Structure
+
+```
+portfolio/
+├── frontend/                 # React + Vite frontend application
+│   ├── public/               # Static assets & public files (PDF resume, favicons)
+│   ├── src/
+│   │   ├── assets/           # Media files & brand assets
+│   │   ├── components/       # UI Components (Hero, About, Projects, Skills, LearningJourney, Contact, Navbar, Footer)
+│   │   ├── App.jsx           # Main App container
+│   │   └── index.css         # Global CSS design tokens & smooth scrolling resets
+│   ├── index.html            # HTML entry point with meta tags & SEO configuration
+│   └── vite.config.js        # Vite configuration file
+├── backend/                  # Node.js + Express backend service
+│   ├── server.js             # Express server setup & contact API endpoints
+│   └── package.json          # Backend dependencies
+├── docs/                     # Documentation & project references
+└── README.md                 # Project documentation
+```
+
+---
+
+## 💻 Local Setup & Development Instructions
+
+### Prerequisites
+- [Node.js](https://nodejs.org/) (v16+ recommended)
+- `npm` or `yarn`
+
+### 1. Clone the Repository
+```bash
+git clone https://github.com/Adwaidkrishna/personal-portfolio.git
+cd personal-portfolio
+```
+
+### 2. Frontend Setup
+```bash
+cd frontend
+npm install
+npm run dev
+```
+The frontend application will be running locally at `http://localhost:5173`.
+
+### 3. Backend Setup
+In a separate terminal window:
+```bash
+cd backend
+npm install
+npm start
+```
+The backend server will start on `http://localhost:5000` (or specified PORT).
+
+---
+
+## 📸 Portfolio Preview
+
+![Portfolio Screenshot](https://via.placeholder.com/1200x630.png?text=Adwaid+Krishna+Portfolio+Preview)
+
+---
+
+## 📜 Certifications & Training
+
+- **MERN Stack Development** — Catalyst Tech Hub (2026)
+- **Full Stack Web Development Internship** — Future By Catalyst
+- **Diploma in Electrical & Electronics Engineering (EEE)** — Vadakara Model Polytechnic College (2021 – 2024)
+
+---
+
+## ✉️ Contact
+
+- **Name**: Adwaid Krishna S
+- **Location**: Kozhikode, Kerala, India
+- **GitHub**: [https://github.com/Adwaidkrishna](https://github.com/Adwaidkrishna)
+- **Portfolio**: [https://personal-portfolio-ten-blue-35.vercel.app](https://personal-portfolio-ten-blue-35.vercel.app)

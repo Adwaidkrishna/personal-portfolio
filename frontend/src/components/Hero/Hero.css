@@ -18,6 +18,7 @@
     flex-direction: column;
     align-items: flex-start;
     gap: 24px;
+    animation: fadeInUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
 }
 
 /* MERN Badge */
@@ -33,6 +34,12 @@
     padding: 6px 14px;
     border-radius: 9999px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+}
+
+.hero-badge:hover {
+    border-color: rgba(37, 99, 235, 0.4);
+    transform: translateY(-2px);
 }
 
 .badge-dot {
@@ -41,6 +48,7 @@
     border-radius: 50%;
     background-color: #22c55e;
     box-shadow: 0 0 10px #22c55e;
+    animation: pulseRing 2.5s infinite;
 }
 
 /* Hero Typography */
@@ -266,9 +274,10 @@
     width: 350px;
     height: 350px;
     border-radius: 50%;
-    background-color: rgba(37, 99, 235, 0.12);
+    background-color: rgba(37, 99, 235, 0.14);
     filter: blur(80px);
     z-index: -2;
+    animation: glowPulse 6s ease-in-out infinite;
 }
 
 /* Slow float animation */

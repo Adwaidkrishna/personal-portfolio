@@ -10,7 +10,7 @@ function LearningJourney() {
             </div>
 
             <div className="journey-timeline">
-                {/* Milestone 2: makBig Training */}
+                {/* Milestone 1: Future By Catalyst Internship */}
                 <div className="timeline-item">
                     <div className="timeline-marker">
                         <div className="marker-dot active-dot"></div>
@@ -20,24 +20,18 @@ function LearningJourney() {
                     <div className="timeline-content">
                         <div className="journey-card-header">
                             <div>
-                                <h3 className="journey-title">MERN Stack Development Trainee</h3>
-                                <h4 className="institution-name">makBig</h4>
+                                <h3 className="journey-title">Full Stack Web Development Internship</h3>
+                                <h4 className="institution-name">Future By Catalyst</h4>
                             </div>
                             <div className="journey-meta">
-                                <span className="journey-duration">Oct 2025 – Present</span>
+                                <span className="journey-duration">11 Months Internship</span>
                                 <span className="journey-location">Calicut, Kerala (On-site)</span>
                             </div>
                         </div>
 
                         <p className="journey-card-intro">
-                            Engaged in an intensive, full-time training program simulating a professional IT workplace environment.
+                            Hands-on full-stack web development internship focusing on building production-grade web applications, API integrations, and database schemas.
                         </p>
-
-                        <ul className="journey-details-list">
-                            <li>Acquired strong foundations in the MERN Stack (MongoDB, Express.js, React, Node.js) through hands-on projects and guided mentorship.</li>
-                            <li>Built clean, responsive web user interfaces and integrated them with custom RESTful backend APIs.</li>
-                            <li>Designed database schemas, managed state lifecycles, and debugged full-stack application flows.</li>
-                        </ul>
 
                         <div className="journey-skills-container">
                             <span className="journey-skill-tag">React.js</span>
@@ -51,7 +45,9 @@ function LearningJourney() {
                     </div>
                 </div>
 
-                {/* Milestone 1: EEE Diploma */}
+
+
+                {/* Milestone 3: EEE Diploma */}
                 <div className="timeline-item">
                     <div className="timeline-marker">
                         <div className="marker-dot"></div>
@@ -62,11 +58,11 @@ function LearningJourney() {
                         <div className="journey-card-header">
                             <div>
                                 <h3 className="journey-title">Diploma in Electrical & Electronics Engineering</h3>
-                                <h4 className="institution-name">Model Polytechnic College, Vadakara</h4>
+                                <h4 className="institution-name">Vadakara Model Polytechnic College</h4>
                             </div>
                             <div className="journey-meta">
-                                <span className="journey-duration">Jul 2021 – May 2024</span>
-                                <span className="journey-location">Vadagara, Kerala</span>
+                                <span className="journey-duration">2021 – 2024</span>
+                                <span className="journey-location">Vadakara, Kerala</span>
                             </div>
                         </div>
 
