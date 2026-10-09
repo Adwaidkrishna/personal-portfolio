@@ -14,7 +14,7 @@ function App() {
       <Hero
         name="Adwaid Krishna"
         role="Full Stack MERN Developer"
-        about="After completing my Diploma in Electrical & Electronics Engineering, I transitioned into software development as a self-taught MERN Stack Developer. I've built and deployed URBANIQ, a full-stack eCommerce platform with live payments, inventory management, and an admin dashboard, along with smaller frontend projects on GitHub. I'm now looking for opportunities with product companies and startups across Kerala."
+        about="I build full-stack web applications using React, Node.js, Express.js, and MongoDB. My projects include URBANIQ, an e-commerce and inventory management platform, and SupportDesk, a real-time support system. I'm looking for junior full-stack or software developer opportunities in Kerala and across India."
       />
       <About />
       <Skills />
