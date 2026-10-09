@@ -1,509 +1,362 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './Projects.css';
 
 function Projects() {
+    const [activeFilter, setActiveFilter] = useState('All');
+
+    const filters = ['All', 'Full Stack', 'Real-Time', 'Frontend', 'Backend'];
+
+    const featuredProjects = [
+        {
+            id: 'supportdesk',
+            categories: ['All', 'Full Stack', 'Real-Time', 'Backend'],
+            brandLetter: 'S',
+            brandBg: '#059669', // Emerald green
+            name: 'SupportDesk',
+            badge: 'Featured',
+            title: 'SupportDesk – Real-Time Support Platform',
+            description: 'A full-stack support platform with real-time ticketing, live chat, audio/video calls, and automated SLA monitoring. Built with role-based access for customers, agents, and admins.',
+            features: [
+                {
+                    label: 'Real-Time Chat',
+                    icon: (
+                        <svg viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                            <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path>
+                        </svg>
+                    )
+                },
+                {
+                    label: 'WebRTC Calls',
+                    icon: (
+                        <svg viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                            <polygon points="23 7 16 12 23 17 23 7"></polygon>
+                            <rect x="1" y="5" width="15" height="14" rx="2" ry="2"></rect>
+                        </svg>
+                    )
+                },
+                {
+                    label: 'SLA Monitoring',
+                    icon: (
+                        <svg viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                            <circle cx="12" cy="12" r="10"></circle>
+                            <polyline points="12 6 12 12 16 14"></polyline>
+                        </svg>
+                    )
+                },
+                {
+                    label: 'Role-Based Access',
+                    icon: (
+                        <svg viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                            <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+                        </svg>
+                    )
+                },
+                {
+                    label: 'Ticket Management',
+                    icon: (
+                        <svg viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                            <path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"></path>
+                            <rect x="8" y="2" width="8" height="4" rx="1" ry="1"></rect>
+                        </svg>
+                    )
+                },
+                {
+                    label: 'Concurrent Assignment',
+                    icon: (
+                        <svg viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                            <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+                            <circle cx="9" cy="7" r="4"></circle>
+                            <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
+                            <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+                        </svg>
+                    )
+                }
+            ],
+            demoUrl: 'https://github.com/Adwaidkrishna/SupportDesk',
+            demoLabel: 'Live Demo',
+            githubUrl: 'https://github.com/Adwaidkrishna/SupportDesk',
+            techStack: ['React', 'Node.js', 'Express.js', 'MongoDB', 'Socket.IO', 'WebRTC', 'JWT', 'Tailwind CSS'],
+            highlights: [
+                '30+ REST APIs with layered architecture',
+                'Real-time messaging using Socket.IO',
+                'WebRTC audio/video calls & screen sharing',
+                'Automated SLA monitoring by ticket priority',
+                'Concurrency-safe ticket assignment',
+                'Secure authentication with JWT & RBAC'
+            ]
+        },
+        {
+            id: 'urbantiq',
+            categories: ['All', 'Full Stack', 'Backend'],
+            brandLetter: 'U',
+            brandBg: '#d97706', // Amber gold
+            name: 'URBANIQ',
+            badge: 'Featured',
+            title: 'URBANIQ – eCommerce & Inventory Platform',
+            description: "A full-stack eCommerce platform for men's fashion with product management, secure payments, inventory management, and an admin dashboard.",
+            features: [
+                {
+                    label: 'Product Management',
+                    icon: (
+                        <svg viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                            <path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"></path>
+                            <polyline points="3.27 6.96 12 12.01 20.73 6.96"></polyline>
+                            <line x1="12" y1="22.08" x2="12" y2="12"></line>
+                        </svg>
+                    )
+                },
+                {
+                    label: 'Inventory & FIFO',
+                    icon: (
+                        <svg viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                            <line x1="18" y1="20" x2="18" y2="10"></line>
+                            <line x1="12" y1="20" x2="12" y2="4"></line>
+                            <line x1="6" y1="20" x2="6" y2="14"></line>
+                        </svg>
+                    )
+                },
+                {
+                    label: 'Razorpay Payments',
+                    icon: (
+                        <svg viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                            <rect x="1" y="4" width="22" height="16" rx="2" ry="2"></rect>
+                            <line x1="1" y1="10" x2="23" y2="10"></line>
+                        </svg>
+                    )
+                },
+                {
+                    label: 'Admin Dashboard',
+                    icon: (
+                        <svg viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                            <rect x="3" y="3" width="7" height="9" rx="1"></rect>
+                            <rect x="14" y="3" width="7" height="5" rx="1"></rect>
+                            <rect x="14" y="12" width="7" height="9" rx="1"></rect>
+                            <rect x="3" y="16" width="7" height="5" rx="1"></rect>
+                        </svg>
+                    )
+                },
+                {
+                    label: 'Order Management',
+                    icon: (
+                        <svg viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                            <circle cx="9" cy="21" r="1"></circle>
+                            <circle cx="20" cy="21" r="1"></circle>
+                            <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path>
+                        </svg>
+                    )
+                },
+                {
+                    label: 'Wallet & Coupons',
+                    icon: (
+                        <svg viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                            <path d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z"></path>
+                            <line x1="7" y1="7" x2="7.01" y2="7"></line>
+                        </svg>
+                    )
+                }
+            ],
+            demoUrl: 'https://urbantiq.store/',
+            demoLabel: 'Live Demo',
+            githubUrl: 'https://github.com/Adwaidkrishna/urbantiq',
+            techStack: ['React', 'Node.js', 'Express.js', 'MongoDB', 'Razorpay', 'AWS EC2', 'Nginx', 'PM2'],
+            highlights: [
+                '90+ REST APIs across eCommerce and inventory modules',
+                'JWT authentication and role-based access control',
+                'Purchase & batch management with FIFO stock validation',
+                'Secure payment integration with Razorpay',
+                'Order lifecycle management and invoice generation',
+                'Deployed on AWS EC2 with Nginx and PM2'
+            ]
+        }
+    ];
+
+    const secondaryProjects = [
+        {
+            id: 'backend-auth',
+            categories: ['All', 'Backend'],
+            icon: (
+                <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+                    <rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect>
+                    <path d="M7 11V7a5 5 0 0 1 10 0v4"></path>
+                </svg>
+            ),
+            iconBg: '#2563eb', // Blue square
+            title: 'Backend Auth System',
+            description: 'A secure authentication system with JWT, bcrypt and input validation. Built with Node.js and Express.js.',
+            githubUrl: 'https://github.com/Adwaidkrishna/badge-task',
+            techStack: ['Node.js', 'Express.js', 'MongoDB', 'JWT', 'Bcrypt']
+        },
+        {
+            id: 'netflix-clone',
+            categories: ['All', 'Frontend'],
+            brandLetter: 'N',
+            iconBg: '#dc2626', // Red square
+            title: 'Netflix UI Clone',
+            description: 'Responsive front-end clone of Netflix landing and login pages using HTML, CSS and Bootstrap.',
+            githubUrl: 'https://github.com/Adwaidkrishna/netflix',
+            techStack: ['HTML', 'CSS', 'Bootstrap']
+        }
+    ];
+
+    const visibleFeatured = featuredProjects.filter(p => p.categories.includes(activeFilter));
+    const visibleSecondary = secondaryProjects.filter(p => p.categories.includes(activeFilter));
+
     return (
         <section id="projects" className="projects-section">
-            <div className="projects-header">
-                <div className="projects-title-container">
+            {/* Header with Kicker, Heading, Subtitle, and Filter Tabs */}
+            <div className="projects-header-block">
+                <div className="projects-header-left">
+                    <span className="projects-kicker">PROJECTS</span>
                     <h2 className="projects-heading">Featured Projects</h2>
-                    <div className="projects-underline"></div>
-                </div>
-                <a href="https://github.com/Adwaidkrishna" target="_blank" rel="noopener noreferrer" className="view-all-link">
-                    View all projects on GitHub <span className="arrow">→</span>
-                </a>
-            </div>
-
-            <div className="featured-projects-container">
-                {/* Featured Project 1: URBANIQ Technical Case Study */}
-                <div className="project-card">
-                    {/* Left Column: CSS-based Dashboard Mockup */}
-                    <div className="project-mockup-container">
-                        <div className="dashboard-mockup">
-                            {/* Sidebar */}
-                            <div className="db-sidebar">
-                                <div className="db-logo">
-                                    <div className="logo-icon">U</div>
-                                    <span className="logo-text">URBANIQ</span>
-                                </div>
-                                <nav className="db-nav">
-                                    <div className="db-nav-item active">
-                                        <svg className="db-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                                            <rect x="3" y="3" width="7" height="9" rx="1"></rect>
-                                            <rect x="14" y="3" width="7" height="5" rx="1"></rect>
-                                            <rect x="14" y="12" width="7" height="9" rx="1"></rect>
-                                            <rect x="3" y="16" width="7" height="5" rx="1"></rect>
-                                        </svg>
-                                        <span>Dashboard</span>
-                                    </div>
-                                    <div className="db-nav-item">
-                                        <svg className="db-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                                            <path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"></path>
-                                            <line x1="3" y1="6" x2="21" y2="6"></line>
-                                            <path d="M16 10a4 4 0 0 1-8 0"></path>
-                                        </svg>
-                                        <span>Products</span>
-                                    </div>
-                                    <div className="db-nav-item">
-                                        <svg className="db-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                                            <circle cx="9" cy="21" r="1"></circle>
-                                            <circle cx="20" cy="21" r="1"></circle>
-                                            <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path>
-                                        </svg>
-                                        <span>Orders</span>
-                                    </div>
-                                    <div className="db-nav-item">
-                                        <svg className="db-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                                            <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
-                                            <circle cx="9" cy="7" r="4"></circle>
-                                            <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
-                                            <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
-                                        </svg>
-                                        <span>Customers</span>
-                                    </div>
-                                    <div className="db-nav-item">
-                                        <svg className="db-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                                            <path d="M21.21 15.89A10 10 0 1 1 8 2.83"></path>
-                                            <path d="M22 12A10 10 0 0 0 12 2v10z"></path>
-                                        </svg>
-                                        <span>Inventory</span>
-                                    </div>
-                                    <div className="db-nav-item">
-                                        <svg className="db-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                                            <line x1="12" y1="1" x2="12" y2="23"></line>
-                                            <path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path>
-                                        </svg>
-                                        <span>Transactions</span>
-                                    </div>
-                                </nav>
-                            </div>
-
-                            {/* Main dashboard content */}
-                            <div className="db-main">
-                                {/* Top header bar with prominent Demo Data indicator */}
-                                <div className="db-header">
-                                    <div className="db-title-container">
-                                        <span className="db-title">Dashboard</span>
-                                        <span className="demo-badge">Demo Data</span>
-                                    </div>
-                                    <div className="db-header-actions">
-                                        <div className="db-avatar">
-                                            <span>A</span>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                {/* Stat cards grid */}
-                                <div className="db-stats-grid">
-                                    <div className="db-stat-card">
-                                        <span className="stat-label">Total Orders</span>
-                                        <span className="stat-value">1,248</span>
-                                    </div>
-                                    <div className="db-stat-card">
-                                        <span className="stat-label">Total Revenue</span>
-                                        <span className="stat-value">₹12,45,000</span>
-                                    </div>
-                                    <div className="db-stat-card">
-                                        <span className="stat-label">Total Customers</span>
-                                        <span className="stat-value">932</span>
-                                    </div>
-                                    <div className="db-stat-card">
-                                        <span className="stat-label">Products</span>
-                                        <span className="stat-value">360</span>
-                                    </div>
-                                </div>
-
-                                {/* Recent Orders Table */}
-                                <div className="db-table-container">
-                                    <div className="table-header">Recent Orders</div>
-                                    <div className="db-table-wrapper">
-                                        <table className="db-table">
-                                            <thead>
-                                                <tr>
-                                                    <th>Order ID</th>
-                                                    <th>Customer</th>
-                                                    <th>Amount</th>
-                                                    <th>Status</th>
-                                                </tr>
-                                            </thead>
-                                            <tbody>
-                                                <tr>
-                                                    <td className="order-id">#ORD-0012</td>
-                                                    <td>John Doe</td>
-                                                    <td>₹2,499</td>
-                                                    <td><span className="badge badge-delivered">Delivered</span></td>
-                                                </tr>
-                                                <tr>
-                                                    <td className="order-id">#ORD-0011</td>
-                                                    <td>Robert Fox</td>
-                                                    <td>₹1,799</td>
-                                                    <td><span className="badge badge-shipped">Shipped</span></td>
-                                                </tr>
-                                                <tr>
-                                                    <td className="order-id">#ORD-0010</td>
-                                                    <td>Albert Flores</td>
-                                                    <td>₹2,199</td>
-                                                    <td><span className="badge badge-processing">Processing</span></td>
-                                                </tr>
-                                            </tbody>
-                                        </table>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    {/* Right Column: Project Case Study Details */}
-                    <div className="project-details">
-                        <span className="project-type-badge">Technical Case Study</span>
-                        <h3 className="project-title">URBANIQ – eCommerce & Inventory Platform</h3>
-                        <p className="project-description">
-                            A production-grade full-stack eCommerce application engineered for end-to-end shopping workflows, real-time stock validation, secure payments, and role-based administration.
-                        </p>
-
-                        {/* Engineering Case Study Challenge & Solution */}
-                        <div className="eng-case-study-box">
-                            <div className="eng-box-title">
-                                <span>⚡</span> Key Engineering Challenge Solved
-                            </div>
-                            <p className="eng-box-content">
-                                <strong>Concurrency & Stock Integrity:</strong> Solved race conditions and potential overselling during high-traffic checkout by implementing atomic MongoDB updates (conditional <code>$inc</code> validation) and Razorpay webhook idempotency keys to ensure zero double-booking.
-                            </p>
-                        </div>
-
-                        {/* Features list - 2 columns */}
-                        <div className="project-features-grid">
-                            <div className="feature-item">
-                                <span className="check-icon">✓</span>
-                                <span>JWT Auth & Google OAuth (RBAC)</span>
-                            </div>
-                            <div className="feature-item">
-                                <span className="check-icon">✓</span>
-                                <span>Admin Management Dashboard</span>
-                            </div>
-                            <div className="feature-item">
-                                <span className="check-icon">✓</span>
-                                <span>Razorpay Live Payments & Wallet</span>
-                            </div>
-                            <div className="feature-item">
-                                <span className="check-icon">✓</span>
-                                <span>Real-Time Order Lifecycle Tracking</span>
-                            </div>
-                            <div className="feature-item">
-                                <span className="check-icon">✓</span>
-                                <span>FIFO Inventory & Stock Validation</span>
-                            </div>
-                            <div className="feature-item">
-                                <span className="check-icon">✓</span>
-                                <span>AWS EC2, Nginx & PM2 Deployment</span>
-                            </div>
-                        </div>
-
-                        {/* Tech Pills */}
-                        <div className="project-tech-list">
-                            <span className="tech-tag">React</span>
-                            <span className="tech-tag">Node.js</span>
-                            <span className="tech-tag">Express.js</span>
-                            <span className="tech-tag">MongoDB</span>
-                            <span className="tech-tag">Razorpay</span>
-                            <span className="tech-tag">AWS EC2</span>
-                            <span className="tech-tag">Nginx</span>
-                        </div>
-
-                        {/* Action buttons */}
-                        <div className="project-actions">
-                            <a href="https://urbantiq.store/" target="_blank" rel="noopener noreferrer" className="btn-demo">
-                                <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="btn-icon">
-                                    <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
-                                    <polyline points="15 3 21 3 21 9"></polyline>
-                                    <line x1="10" y1="14" x2="21" y2="3"></line>
-                                </svg>
-                                Live Demo
-                            </a>
-                            <a href="https://github.com/Adwaidkrishna/urbantiq" target="_blank" rel="noopener noreferrer" className="btn-github">
-                                <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor" className="btn-icon">
-                                    <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"></path>
-                                </svg>
-                                Case Study Repo
-                            </a>
-                        </div>
-                    </div>
-                </div>
-
-                {/* Featured Project 2: SupportDesk Real-Time System */}
-                <div className="project-card supportdesk-card">
-                    {/* Left Column: Polished SaaS SupportDesk Interface Mockup */}
-                    <div className="project-mockup-container">
-                        <div className="sd-saas-window" role="region" aria-label="SupportDesk Interface Demo">
-                            {/* Top Bar */}
-                            <div className="sd-topbar">
-                                <div className="sd-topbar-left">
-                                    <div className="sd-app-icon">
-                                        <svg viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
-                                            <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path>
-                                        </svg>
-                                    </div>
-                                    <span className="sd-app-name">SupportDesk</span>
-                                    <span className="sd-demo-tag">DEMO DATA</span>
-                                </div>
-                                <div className="sd-topbar-right">
-                                    <div className="sd-agent-status" title="Agent Availability: Online">
-                                        <span className="sd-status-dot"></span>
-                                        <span>Agent Online</span>
-                                    </div>
-                                    <div className="sd-user-avatar" title="Logged in as Support Agent">AK</div>
-                                </div>
-                            </div>
-
-                            {/* Main SaaS Workspace: 2-Pane Architecture */}
-                            <div className="sd-workspace">
-                                {/* Left Pane: Priority Ticket Queue */}
-                                <div className="sd-queue-panel">
-                                    <div className="sd-panel-head">
-                                        <span className="sd-panel-title">Active Queue</span>
-                                        <span className="sd-queue-indicator">3 Live</span>
-                                    </div>
-                                    <div className="sd-ticket-rows">
-                                        {/* Ticket 1 (Active) */}
-                                        <div className="sd-ticket-row active">
-                                            <div className="sd-row-top">
-                                                <span className="sd-tck-code">#TCK-1042</span>
-                                                <span className="sd-badge sd-badge-p1">P1 Urgent</span>
-                                            </div>
-                                            <div className="sd-row-subject">Payment Webhook Retries</div>
-                                            <div className="sd-row-meta">
-                                                <span className="sd-status-label open">Open</span>
-                                                <span className="sd-sla-time">SLA: 14m</span>
-                                            </div>
-                                        </div>
-
-                                        {/* Ticket 2 */}
-                                        <div className="sd-ticket-row">
-                                            <div className="sd-row-top">
-                                                <span className="sd-tck-code">#TCK-1039</span>
-                                                <span className="sd-badge sd-badge-p2">P2 High</span>
-                                            </div>
-                                            <div className="sd-row-subject">Inventory Race Condition</div>
-                                            <div className="sd-row-meta">
-                                                <span className="sd-status-label progress">In Progress</span>
-                                                <span className="sd-agent-name">Alex M.</span>
-                                            </div>
-                                        </div>
-
-                                        {/* Ticket 3 */}
-                                        <div className="sd-ticket-row">
-                                            <div className="sd-row-top">
-                                                <span className="sd-tck-code">#TCK-1036</span>
-                                                <span className="sd-badge sd-badge-p3">Normal</span>
-                                            </div>
-                                            <div className="sd-row-subject">Session Auth Expiry</div>
-                                            <div className="sd-row-meta">
-                                                <span className="sd-status-label closed">Resolved</span>
-                                                <span className="sd-agent-name">Adwaid</span>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                {/* Right Pane: Live Ticket Conversation & Controls */}
-                                <div className="sd-chat-panel">
-                                    <div className="sd-chat-header">
-                                        <div className="sd-chat-title-wrap">
-                                            <div className="sd-chat-ticket-id">#TCK-1042 · Marcus Vance</div>
-                                            <div className="sd-chat-meta">Payment Gateway · SLA Target: 14m</div>
-                                        </div>
-                                        <div className="sd-realtime-badge">
-                                            <span className="sd-live-pulse"></span>
-                                            <span>Socket.IO Live</span>
-                                        </div>
-                                    </div>
-
-                                    <div className="sd-messages-stream">
-                                        <div className="sd-msg-group incoming">
-                                            <div className="sd-msg-sender">Marcus V. <span className="sd-msg-time">10:41 AM</span></div>
-                                            <div className="sd-bubble">
-                                                Seeing 504 gateway timeouts on Razorpay retry webhook captures.
-                                            </div>
-                                        </div>
-
-                                        <div className="sd-msg-group outgoing">
-                                            <div className="sd-msg-sender">Adwaid (Agent) <span className="sd-msg-time">10:43 AM</span></div>
-                                            <div className="sd-bubble">
-                                                Race condition resolved in queue handler with idempotency locks. Patch live.
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                    <div className="sd-composer-bar">
-                                        <span className="sd-composer-placeholder">Reply to customer or leave note...</span>
-                                        <button type="button" className="sd-send-btn" aria-label="Send Message" tabIndex={-1}>
-                                            <svg viewBox="0 0 24 24" width="12" height="12" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
-                                                <line x1="22" y1="2" x2="11" y2="13"></line>
-                                                <polygon points="22 2 15 22 11 13 2 9 22 2"></polygon>
-                                            </svg>
-                                        </button>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    {/* Right Column: SupportDesk Details */}
-                    <div className="project-details">
-                        <span className="project-type-badge badge-realtime">Real-Time System</span>
-                        <h3 className="project-title">SupportDesk – Support & Escalation Platform</h3>
-                        <p className="project-description">
-                            A production-ready customer support platform engineered with bidirectional Socket.IO messaging, WebRTC peer-to-peer video/audio calls, and concurrency-safe ticket workflows.
-                        </p>
-
-                        {/* Engineering Case Study Highlight */}
-                        <div className="eng-case-study-box">
-                            <div className="eng-box-title">
-                                <span>⚡</span> Key Architectural Highlight
-                            </div>
-                            <p className="eng-box-content">
-                                <strong>Concurrency-Safe Queue & WebRTC:</strong> Implemented optimistic concurrency controls preventing multiple agents from claiming the same ticket, combined with WebRTC peer signaling for instant zero-latency customer screen diagnosis.
-                            </p>
-                        </div>
-
-                        {/* Features list - 4 High Impact Points */}
-                        <div className="project-features-grid">
-                            <div className="feature-item">
-                                <span className="check-icon">✓</span>
-                                <span>Customer, Agent & Admin Roles (RBAC)</span>
-                            </div>
-                            <div className="feature-item">
-                                <span className="check-icon">✓</span>
-                                <span>Real-Time Bi-Directional Socket.IO Chat</span>
-                            </div>
-                            <div className="feature-item">
-                                <span className="check-icon">✓</span>
-                                <span>WebRTC Video Calling & Screen Sharing</span>
-                            </div>
-                            <div className="feature-item">
-                                <span className="check-icon">✓</span>
-                                <span>Concurrency-Safe Assignment Queue</span>
-                            </div>
-                        </div>
-
-                        {/* Tech Pills */}
-                        <div className="project-tech-list">
-                            <span className="tech-tag">React</span>
-                            <span className="tech-tag">Node.js</span>
-                            <span className="tech-tag">Express.js</span>
-                            <span className="tech-tag">MongoDB</span>
-                            <span className="tech-tag">Socket.IO</span>
-                            <span className="tech-tag">WebRTC</span>
-                        </div>
-
-                        {/* Action buttons */}
-                        <div className="project-actions">
-                            <a href="https://github.com/Adwaidkrishna/SupportDesk" target="_blank" rel="noopener noreferrer" className="btn-demo">
-                                <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="btn-icon">
-                                    <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
-                                    <polyline points="15 3 21 3 21 9"></polyline>
-                                    <line x1="10" y1="14" x2="21" y2="3"></line>
-                                </svg>
-                                Explore System
-                            </a>
-                            <a href="https://github.com/Adwaidkrishna/SupportDesk" target="_blank" rel="noopener noreferrer" className="btn-github">
-                                <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor" className="btn-icon">
-                                    <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"></path>
-                                </svg>
-                                GitHub Repo
-                            </a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            {/* Other Projects Section */}
-            <div className="secondary-projects-header">
-                <h3 className="secondary-projects-heading">Other Projects</h3>
-            </div>
-            
-            <div className="secondary-projects-grid">
-                {/* Backend Authentication System Project Card */}
-                <div className="secondary-project-card">
-                    <div className="sec-card-header">
-                        <div className="sec-card-icon">
-                            <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
-                                <rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect>
-                                <path d="M7 11V7a5 5 0 0 1 10 0v4"></path>
-                            </svg>
-                        </div>
-                        <h4 className="sec-project-title">Backend Auth System</h4>
-                    </div>
-                    
-                    <p className="sec-project-description">
-                        A secure backend authentication system implementing JWT token sessions, bcrypt password hashing, and input validation.
+                    <p className="projects-subtitle">
+                        A collection of full-stack and frontend projects that showcase my skills, problem-solving approach, and real-world development experience.
                     </p>
-                    
-                    <div className="sec-project-tech">
-                        <span className="sec-tech-tag">Node.js</span>
-                        <span className="sec-tech-tag">Express</span>
-                        <span className="sec-tech-tag">MongoDB</span>
-                        <span className="sec-tech-tag">JWT</span>
-                        <span className="sec-tech-tag">Bcrypt</span>
-                    </div>
-                    
-                    <div className="sec-project-actions">
-                        <a href="https://github.com/Adwaidkrishna/badge-task" target="_blank" rel="noopener noreferrer" className="sec-btn-github">
-                            <svg viewBox="0 0 24 24" width="14" height="14" fill="currentColor" className="btn-icon">
-                                <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"></path>
-                            </svg>
-                            GitHub Repository
-                        </a>
-                    </div>
                 </div>
 
-                {/* Netflix Clone Project Card */}
-                <div className="secondary-project-card">
-                    <div className="sec-card-header">
-                        <div className="sec-card-icon">
-                            <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
-                                <rect x="2" y="2" width="20" height="20" rx="2.18" ry="2.18"></rect>
-                                <line x1="7" y1="2" x2="7" y2="22"></line>
-                                <line x1="17" y1="2" x2="17" y2="22"></line>
-                                <line x1="2" y1="12" x2="22" y2="12"></line>
-                                <line x1="2" y1="7" x2="7" y2="7"></line>
-                                <line x1="2" y1="17" x2="7" y2="17"></line>
-                                <line x1="17" y1="17" x2="22" y2="17"></line>
-                                <line x1="17" y1="7" x2="22" y2="7"></line>
-                            </svg>
+                <div className="projects-filter-bar" role="tablist" aria-label="Project category filters">
+                    {filters.map((filter) => (
+                        <button
+                            key={filter}
+                            type="button"
+                            role="tab"
+                            aria-selected={activeFilter === filter}
+                            className={`filter-tab ${activeFilter === filter ? 'active' : ''}`}
+                            onClick={() => setActiveFilter(filter)}
+                        >
+                            {filter}
+                        </button>
+                    ))}
+                </div>
+            </div>
+
+            {/* Featured Projects Cards */}
+            <div className="fp-cards-list">
+                {visibleFeatured.map((project) => (
+                    <article key={project.id} className="fp-card">
+                        {/* Left Column: Brand, Title, Description, Feature Badges */}
+                        <div className="fp-col-left">
+                            <div className="fp-brand-row">
+                                <div className="fp-brand-icon" style={{ backgroundColor: project.brandBg }}>
+                                    {project.brandLetter}
+                                </div>
+                                <span className="fp-brand-name">{project.name}</span>
+                                <span className="fp-featured-badge">{project.badge}</span>
+                            </div>
+
+                            <h3 className="fp-title">{project.title}</h3>
+                            <p className="fp-description">{project.description}</p>
+
+                            <div className="fp-features-grid">
+                                {project.features.map((feat, idx) => (
+                                    <div key={idx} className="fp-feature-pill">
+                                        <span className="fp-feat-icon">{feat.icon}</span>
+                                        <span className="fp-feat-label">{feat.label}</span>
+                                    </div>
+                                ))}
+                            </div>
                         </div>
-                        <h4 className="sec-project-title">Netflix UI Clone</h4>
-                    </div>
-                    
-                    <p className="sec-project-description">
-                        A responsive static front-end clone of the Netflix landing and login pages built with clean HTML/CSS and Bootstrap.
-                    </p>
-                    
-                    <div className="sec-project-tech">
-                        <span className="sec-tech-tag">HTML</span>
-                        <span className="sec-tech-tag">CSS</span>
-                        <span className="sec-tech-tag">Bootstrap</span>
-                    </div>
-                    
-                    <div className="sec-project-actions">
-                        <a href="https://github.com/Adwaidkrishna/netflix" target="_blank" rel="noopener noreferrer" className="sec-btn-github">
-                            <svg viewBox="0 0 24 24" width="14" height="14" fill="currentColor" className="btn-icon">
-                                <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"></path>
-                            </svg>
-                            GitHub Repository
-                        </a>
-                    </div>
+
+                        {/* Right Column: Actions, Tech Stack, Key Highlights */}
+                        <div className="fp-col-right">
+                            <div className="fp-actions-row">
+                                <a
+                                    href={project.demoUrl}
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    className="fp-btn-demo"
+                                >
+                                    <svg viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round">
+                                        <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+                                        <polyline points="15 3 21 3 21 9"></polyline>
+                                        <line x1="10" y1="14" x2="21" y2="3"></line>
+                                    </svg>
+                                    {project.demoLabel}
+                                </a>
+
+                                <a
+                                    href={project.githubUrl}
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    className="fp-btn-github"
+                                >
+                                    <svg viewBox="0 0 24 24" width="13" height="13" fill="currentColor">
+                                        <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"></path>
+                                    </svg>
+                                    GitHub
+                                </a>
+                            </div>
+
+                            {/* Tech Stack */}
+                            <div className="fp-meta-block">
+                                <span className="fp-section-label">TECH STACK</span>
+                                <div className="fp-tech-pills">
+                                    {project.techStack.map((tech) => (
+                                        <span key={tech} className="fp-tech-tag">{tech}</span>
+                                    ))}
+                                </div>
+                            </div>
+
+                            {/* Key Highlights */}
+                            <div className="fp-meta-block">
+                                <span className="fp-section-label">KEY HIGHLIGHTS</span>
+                                <ul className="fp-highlights-list">
+                                    {project.highlights.map((hl, idx) => (
+                                        <li key={idx} className="fp-highlight-item">
+                                            <span className="fp-check-bubble">
+                                                <svg viewBox="0 0 16 16" width="9" height="9" fill="currentColor">
+                                                    <path fillRule="evenodd" d="M13.78 4.22a.75.75 0 0 1 0 1.06l-7.25 7.25a.75.75 0 0 1-1.06 0L2.22 9.28a.75.75 0 0 1 1.06-1.06L6 10.94l6.72-6.72a.75.75 0 0 1 1.06 0z"></path>
+                                                </svg>
+                                            </span>
+                                            <span>{hl}</span>
+                                        </li>
+                                    ))}
+                                </ul>
+                            </div>
+                        </div>
+                    </article>
+                ))}
+            </div>
+
+            {/* Secondary Projects Row (Bottom 2-column grid as shown in mockup) */}
+            {visibleSecondary.length > 0 && (
+                <div className="sec-projects-row">
+                    {visibleSecondary.map((proj) => (
+                        <div key={proj.id} className="sec-project-card-mini">
+                            <div className="sec-top-line">
+                                <div className="sec-icon-box" style={{ backgroundColor: proj.iconBg }}>
+                                    {proj.brandLetter ? (
+                                        <span className="sec-letter-bold">{proj.brandLetter}</span>
+                                    ) : (
+                                        proj.icon
+                                    )}
+                                </div>
+                                <div className="sec-title-wrap">
+                                    <h4 className="sec-title-mini">{proj.title}</h4>
+                                </div>
+                                <a
+                                    href={proj.githubUrl}
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    className="sec-btn-github-mini"
+                                >
+                                    <svg viewBox="0 0 24 24" width="12" height="12" fill="currentColor">
+                                        <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"></path>
+                                    </svg>
+                                    GitHub
+                                </a>
+                            </div>
+
+                            <p className="sec-desc-mini">{proj.description}</p>
+
+                            <div className="sec-pills-mini">
+                                {proj.techStack.map((tech) => (
+                                    <span key={tech} className="fp-tech-tag">{tech}</span>
+                                ))}
+                            </div>
+                        </div>
+                    ))}
                 </div>
-
-
-            </div>
-
-            {/* GitHub More Link Footer */}
-            <div className="projects-footer">
-                <a href="https://github.com/Adwaidkrishna" target="_blank" rel="noopener noreferrer" className="github-more-link">
-                    More projects on GitHub <span className="arrow">→</span>
-                </a>
-            </div>
+            )}
         </section>
     );
 }
