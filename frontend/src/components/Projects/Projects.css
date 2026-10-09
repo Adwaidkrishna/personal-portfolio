@@ -918,18 +918,21 @@
 
 /* SupportDesk SaaS Dashboard Interface Preview */
 .supportdesk-card {
-    grid-template-columns: 1.16fr 0.84fr;
+    padding: 32px;
+    grid-template-columns: 1.15fr 0.85fr;
+    gap: 32px;
     align-items: center;
 }
 
 .sd-saas-window {
     width: 100%;
-    background-color: #080d1a;
+    aspect-ratio: 16 / 10.5;
+    background-color: #070c18;
     border: 1px solid rgba(255, 255, 255, 0.08);
-    border-radius: 14px;
+    border-radius: 12px;
     box-shadow: 
-        0 24px 50px rgba(0, 0, 0, 0.6),
-        0 0 1px rgba(255, 255, 255, 0.12);
+        0 20px 45px rgba(0, 0, 0, 0.55),
+        0 0 1px rgba(255, 255, 255, 0.1);
     overflow: hidden;
     display: flex;
     flex-direction: column;
@@ -940,79 +943,63 @@
 
 /* A. Top Navigation Bar */
 .sd-topbar {
-    background: #0b1122;
-    padding: 10px 16px;
+    background: #090e1d;
+    padding: 8px 14px;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.06);
-    gap: 12px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    flex-shrink: 0;
+    box-sizing: border-box;
 }
 
 .sd-topbar-left {
     display: flex;
     align-items: center;
     gap: 8px;
-    flex-shrink: 0;
 }
 
 .sd-app-icon {
-    width: 24px;
-    height: 24px;
-    border-radius: 6px;
+    width: 22px;
+    height: 22px;
+    border-radius: 5px;
     background: linear-gradient(135deg, #0284c7, #0ea5e9);
     color: #ffffff;
     display: flex;
     align-items: center;
     justify-content: center;
-    box-shadow: 0 2px 8px rgba(14, 165, 233, 0.35);
+    box-shadow: 0 2px 6px rgba(14, 165, 233, 0.35);
 }
 
 .sd-app-name {
-    font-size: 13px;
+    font-size: 12px;
     font-weight: 700;
     color: #f8fafc;
     letter-spacing: -0.01em;
 }
 
 .sd-demo-tag {
-    font-size: 9px;
+    font-size: 8.5px;
     font-weight: 700;
     padding: 2px 5px;
-    border-radius: 4px;
+    border-radius: 3px;
     background: rgba(56, 189, 248, 0.12);
     color: #38bdf8;
     border: 1px solid rgba(56, 189, 248, 0.28);
-    letter-spacing: 0.05em;
-}
-
-.sd-topbar-search {
-    display: flex;
-    align-items: center;
-    gap: 6px;
-    background: rgba(15, 23, 42, 0.65);
-    border: 1px solid rgba(255, 255, 255, 0.06);
-    border-radius: 6px;
-    padding: 4px 10px;
-    font-size: 11px;
-    color: #64748b;
-    flex: 1;
-    max-width: 175px;
-    user-select: none;
+    letter-spacing: 0.04em;
 }
 
 .sd-topbar-right {
     display: flex;
     align-items: center;
     gap: 10px;
-    flex-shrink: 0;
 }
 
 .sd-agent-status {
     display: flex;
     align-items: center;
     gap: 5px;
-    font-size: 11px;
+    font-size: 10.5px;
     font-weight: 600;
     color: #10b981;
 }
@@ -1022,100 +1009,55 @@
     height: 6px;
     border-radius: 50%;
     background: #10b981;
-    box-shadow: 0 0 6px rgba(16, 185, 129, 0.6);
+    box-shadow: 0 0 6px rgba(16, 185, 129, 0.7);
 }
 
 .sd-user-avatar {
-    width: 24px;
-    height: 24px;
+    width: 22px;
+    height: 22px;
     border-radius: 50%;
     background: #1e293b;
     border: 1px solid rgba(255, 255, 255, 0.12);
     color: #94a3b8;
-    font-size: 10px;
+    font-size: 9.5px;
     font-weight: 700;
     display: flex;
     align-items: center;
     justify-content: center;
 }
 
-/* SaaS Workspace Layout */
+/* B. Main SaaS Workspace (2-Pane) */
 .sd-workspace {
     display: grid;
-    grid-template-columns: 105px 180px 1fr;
-    background: #080d1a;
-    min-height: 285px;
+    grid-template-columns: 175px 1fr;
+    background: #070c18;
+    flex: 1;
+    min-height: 0;
+    overflow: hidden;
 }
 
-/* B. Compact Navigation Sidebar */
-.sd-sidebar {
-    background: #090e1c;
+/* Left Pane: Priority Ticket Queue */
+.sd-queue-panel {
     border-right: 1px solid rgba(255, 255, 255, 0.05);
-    padding: 10px 6px;
+    padding: 10px 9px;
     display: flex;
     flex-direction: column;
-    gap: 3px;
-    user-select: none;
-}
-
-.sd-nav-item {
-    display: flex;
-    align-items: center;
     gap: 7px;
-    padding: 6px 8px;
-    border-radius: 6px;
-    font-size: 11px;
-    color: #94a3b8;
-    font-weight: 500;
-    transition: all 0.15s ease;
-}
-
-.sd-nav-item.active {
-    background: rgba(56, 189, 248, 0.12);
-    color: #38bdf8;
-    font-weight: 600;
-}
-
-.sd-nav-count {
-    margin-left: auto;
-    font-size: 9px;
-    font-weight: 600;
-    padding: 1px 5px;
-    border-radius: 999px;
-    background: rgba(255, 255, 255, 0.06);
-    color: #64748b;
-}
-
-.sd-nav-count.alert {
-    background: rgba(239, 68, 68, 0.2);
-    color: #f87171;
-}
-
-.sd-nav-item.active .sd-nav-count {
-    background: rgba(56, 189, 248, 0.25);
-    color: #38bdf8;
-}
-
-/* C. Ticket List Column */
-.sd-tickets-panel {
-    border-right: 1px solid rgba(255, 255, 255, 0.05);
-    padding: 10px;
-    display: flex;
-    flex-direction: column;
-    gap: 8px;
-    background: #090f1f;
+    background: #080e1d;
+    box-sizing: border-box;
+    overflow: hidden;
 }
 
 .sd-panel-head {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 2px 2px 6px;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    padding: 0 2px 4px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.04);
 }
 
 .sd-panel-title {
-    font-size: 10.5px;
+    font-size: 10px;
     font-weight: 700;
     text-transform: uppercase;
     letter-spacing: 0.05em;
@@ -1123,7 +1065,7 @@
 }
 
 .sd-queue-indicator {
-    font-size: 9.5px;
+    font-size: 9px;
     color: #10b981;
     font-weight: 600;
 }
@@ -1131,17 +1073,18 @@
 .sd-ticket-rows {
     display: flex;
     flex-direction: column;
-    gap: 6px;
+    gap: 5px;
+    overflow: hidden;
 }
 
 .sd-ticket-row {
-    background: rgba(15, 23, 42, 0.6);
-    border: 1px solid rgba(255, 255, 255, 0.05);
-    border-radius: 7px;
-    padding: 8px 9px;
+    background: rgba(15, 23, 42, 0.55);
+    border: 1px solid rgba(255, 255, 255, 0.04);
+    border-radius: 6px;
+    padding: 6px 8px;
     display: flex;
     flex-direction: column;
-    gap: 4px;
+    gap: 3px;
     transition: all 0.2s ease;
 }
 
@@ -1157,17 +1100,17 @@
 }
 
 .sd-tck-code {
-    font-size: 10.5px;
+    font-size: 10px;
     font-weight: 700;
     color: #38bdf8;
     font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
 }
 
 .sd-badge {
-    font-size: 9px;
+    font-size: 8.5px;
     font-weight: 700;
-    padding: 1px 5px;
-    border-radius: 4px;
+    padding: 1px 4px;
+    border-radius: 3px;
     text-transform: uppercase;
 }
 
@@ -1190,22 +1133,21 @@
 }
 
 .sd-row-subject {
-    font-size: 11.5px;
+    font-size: 10.5px;
     font-weight: 500;
     color: #f1f5f9;
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
-    line-height: 1.3;
+    line-height: 1.25;
 }
 
 .sd-row-meta {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    font-size: 9.5px;
+    font-size: 9px;
     color: #64748b;
-    margin-top: 2px;
 }
 
 .sd-status-label.open { color: #f87171; font-weight: 600; }
@@ -1221,45 +1163,48 @@
     color: #64748b;
 }
 
-/* D. Active Conversation Panel */
+/* Right Pane: Live Ticket Conversation & Controls */
 .sd-chat-panel {
-    padding: 12px 14px;
+    padding: 10px 12px;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    background: #080d1a;
+    background: #060a14;
+    min-height: 0;
+    overflow: hidden;
+    box-sizing: border-box;
 }
 
 .sd-chat-header {
     display: flex;
     justify-content: space-between;
     align-items: flex-start;
-    padding-bottom: 8px;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
-    margin-bottom: 10px;
+    padding-bottom: 6px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.04);
     gap: 8px;
+    flex-shrink: 0;
 }
 
 .sd-chat-ticket-id {
-    font-size: 12px;
+    font-size: 11.5px;
     font-weight: 700;
     color: #f8fafc;
-    line-height: 1.3;
+    line-height: 1.25;
 }
 
 .sd-chat-meta {
-    font-size: 10px;
+    font-size: 9.5px;
     color: #64748b;
-    margin-top: 2px;
+    margin-top: 1px;
 }
 
 .sd-realtime-badge {
     display: inline-flex;
     align-items: center;
-    gap: 5px;
-    font-size: 10px;
+    gap: 4px;
+    font-size: 9.5px;
     font-weight: 600;
-    padding: 2px 7px;
+    padding: 2px 6px;
     border-radius: 999px;
     background: rgba(16, 185, 129, 0.12);
     color: #34d399;
@@ -1277,15 +1222,16 @@
 .sd-messages-stream {
     display: flex;
     flex-direction: column;
-    gap: 9px;
-    margin-bottom: 10px;
+    gap: 7px;
+    margin: 6px 0;
+    overflow: hidden;
 }
 
 .sd-msg-group {
     display: flex;
     flex-direction: column;
-    gap: 3px;
-    max-width: 92%;
+    gap: 2px;
+    max-width: 94%;
 }
 
 .sd-msg-group.incoming {
@@ -1297,7 +1243,7 @@
 }
 
 .sd-msg-sender {
-    font-size: 9.5px;
+    font-size: 9px;
     font-weight: 600;
     color: #64748b;
 }
@@ -1310,14 +1256,14 @@
 .sd-msg-time {
     font-weight: 400;
     color: #475569;
-    margin-left: 4px;
+    margin-left: 3px;
 }
 
 .sd-bubble {
-    font-size: 11.5px;
-    line-height: 1.45;
-    padding: 7px 11px;
-    border-radius: 8px;
+    font-size: 10.5px;
+    line-height: 1.4;
+    padding: 6px 10px;
+    border-radius: 7px;
 }
 
 .incoming .sd-bubble {
@@ -1337,29 +1283,26 @@
 .sd-composer-bar {
     display: flex;
     align-items: center;
-    gap: 8px;
-    padding: 4px 6px 4px 12px;
-    background: rgba(15, 23, 42, 0.95);
-    border: 1px solid rgba(255, 255, 255, 0.08);
-    border-radius: 7px;
-    margin-top: auto;
+    justify-content: space-between;
+    padding: 4px 6px 4px 10px;
+    height: 28px;
+    background: rgba(15, 23, 42, 0.85);
+    border: 1px solid rgba(255, 255, 255, 0.06);
+    border-radius: 6px;
+    flex-shrink: 0;
+    box-sizing: border-box;
 }
 
-.sd-composer-input {
-    background: transparent;
-    border: none;
-    outline: none;
-    font-size: 11px;
-    color: #94a3b8;
-    flex: 1;
-    font-family: inherit;
-    cursor: default;
+.sd-composer-placeholder {
+    font-size: 10.5px;
+    color: #64748b;
+    user-select: none;
 }
 
 .sd-send-btn {
-    width: 24px;
-    height: 24px;
-    border-radius: 6px;
+    width: 20px;
+    height: 20px;
+    border-radius: 4px;
     background: #0ea5e9;
     border: none;
     color: #ffffff;
@@ -1380,83 +1323,67 @@
    ================================================== */
 @media (max-width: 1200px) {
     .supportdesk-card {
-        grid-template-columns: 1.12fr 0.88fr;
-        gap: 32px;
+        padding: 30px;
+        gap: 28px;
     }
 
     .sd-workspace {
-        grid-template-columns: 95px 165px 1fr;
-    }
-
-    .sd-topbar-search {
-        display: none;
+        grid-template-columns: 160px 1fr;
     }
 }
 
 @media (max-width: 1024px) {
     .supportdesk-card {
         grid-template-columns: 1fr;
-        gap: 32px;
-        padding: 32px;
+        padding: 28px;
+        gap: 28px;
     }
 
-    .sd-workspace {
-        grid-template-columns: 100px 175px 1fr;
-    }
-}
-
-@media (max-width: 768px) {
-    .supportdesk-card {
-        padding: 24px;
-        gap: 24px;
-    }
-
-    /* Hide sidebar on tablet/mobile so ticket queue and chat are comfortable */
-    .sd-sidebar {
-        display: none;
-    }
-
-    .sd-workspace {
-        grid-template-columns: 165px 1fr;
+    .sd-saas-window {
+        max-width: 580px;
+        margin: 0 auto;
     }
 }
 
 @media (max-width: 640px) {
     .featured-projects-container {
-        gap: 32px;
+        gap: 28px;
         margin-bottom: 36px;
     }
 
     .supportdesk-card {
-        padding: 18px 16px;
+        padding: 18px 14px;
         gap: 20px;
         border-radius: 16px;
     }
 
+    .sd-saas-window {
+        aspect-ratio: auto;
+    }
+
     .sd-workspace {
         grid-template-columns: 1fr;
-        min-height: auto;
     }
 
-    .sd-tickets-panel {
+    .sd-queue-panel {
         border-right: none;
-        border-bottom: 1px solid rgba(255, 255, 255, 0.06);
-        padding: 10px;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+        padding: 8px;
     }
 
-    /* Show top 2 tickets on narrow mobile screens to avoid vertical bloating */
+    /* Show top 2 tickets on narrow screens to prevent vertical bloat */
     .sd-ticket-row:nth-child(3) {
         display: none;
     }
 
     .sd-chat-panel {
-        padding: 12px 10px;
+        padding: 10px 8px;
     }
 
     .sd-chat-header {
         flex-direction: column;
         align-items: flex-start;
-        gap: 6px;
+        gap: 5px;
     }
 
     .sd-realtime-badge {
@@ -1464,8 +1391,8 @@
     }
 
     .sd-bubble {
-        font-size: 11px;
-        padding: 7px 9px;
+        font-size: 10px;
+        padding: 6px 8px;
     }
 
     .eng-case-study-box {
@@ -1480,14 +1407,15 @@
     }
 
     .sd-topbar {
-        padding: 8px 10px;
+        padding: 7px 10px;
     }
 
     .sd-agent-status span:last-child {
-        display: none; /* keep green status dot only */
+        display: none; /* keep pulse dot only */
     }
 
     .sd-composer-bar {
-        padding: 4px 6px 4px 10px;
+        padding: 3px 6px 3px 8px;
+        height: 26px;
     }
 }

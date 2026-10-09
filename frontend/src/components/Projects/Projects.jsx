@@ -235,7 +235,7 @@ function Projects() {
                     {/* Left Column: Polished SaaS SupportDesk Interface Mockup */}
                     <div className="project-mockup-container">
                         <div className="sd-saas-window" role="region" aria-label="SupportDesk Interface Demo">
-                            {/* Top Navigation Bar */}
+                            {/* Top Bar */}
                             <div className="sd-topbar">
                                 <div className="sd-topbar-left">
                                     <div className="sd-app-icon">
@@ -246,74 +246,31 @@ function Projects() {
                                     <span className="sd-app-name">SupportDesk</span>
                                     <span className="sd-demo-tag">DEMO DATA</span>
                                 </div>
-                                <div className="sd-topbar-search">
-                                    <svg viewBox="0 0 24 24" width="11" height="11" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                                        <circle cx="11" cy="11" r="8"></circle>
-                                        <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
-                                    </svg>
-                                    <span>Search tickets...</span>
-                                </div>
                                 <div className="sd-topbar-right">
                                     <div className="sd-agent-status" title="Agent Availability: Online">
                                         <span className="sd-status-dot"></span>
-                                        <span>Online</span>
+                                        <span>Agent Online</span>
                                     </div>
                                     <div className="sd-user-avatar" title="Logged in as Support Agent">AK</div>
                                 </div>
                             </div>
 
-                            {/* Main SaaS Workspace */}
+                            {/* Main SaaS Workspace: 2-Pane Architecture */}
                             <div className="sd-workspace">
-                                {/* Compact Navigation Sidebar */}
-                                <aside className="sd-sidebar" aria-label="SupportDesk Navigation">
-                                    <div className="sd-nav-item active">
-                                        <svg viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                                            <polyline points="22 12 16 12 14 15 10 15 8 12 2 12"></polyline>
-                                            <path d="M5.45 5.11L2 12v6a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2v-6l-3.45-6.89A2 2 0 0 0 16.76 4H7.24a2 2 0 0 0-1.79 1.11z"></path>
-                                        </svg>
-                                        <span>Inbox</span>
-                                        <span className="sd-nav-count">8</span>
-                                    </div>
-                                    <div className="sd-nav-item">
-                                        <svg viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                                            <path d="M16 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
-                                            <circle cx="8.5" cy="7" r="4"></circle>
-                                        </svg>
-                                        <span>Tickets</span>
-                                        <span className="sd-nav-count">3</span>
-                                    </div>
-                                    <div className="sd-nav-item">
-                                        <svg viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                                            <circle cx="12" cy="12" r="10"></circle>
-                                            <line x1="12" y1="8" x2="12" y2="12"></line>
-                                            <line x1="12" y1="16" x2="12.01" y2="16"></line>
-                                        </svg>
-                                        <span>Priority</span>
-                                        <span className="sd-nav-count alert">2</span>
-                                    </div>
-                                    <div className="sd-nav-item">
-                                        <svg viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                                            <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
-                                            <polyline points="22 4 12 14.01 9 11.01"></polyline>
-                                        </svg>
-                                        <span>Resolved</span>
-                                    </div>
-                                </aside>
-
-                                {/* Ticket List Column */}
-                                <div className="sd-tickets-panel">
+                                {/* Left Pane: Priority Ticket Queue */}
+                                <div className="sd-queue-panel">
                                     <div className="sd-panel-head">
-                                        <span className="sd-panel-title">Priority Queue</span>
-                                        <span className="sd-queue-indicator">Realtime</span>
+                                        <span className="sd-panel-title">Active Queue</span>
+                                        <span className="sd-queue-indicator">3 Live</span>
                                     </div>
                                     <div className="sd-ticket-rows">
-                                        {/* Ticket 1: Active */}
+                                        {/* Ticket 1 (Active) */}
                                         <div className="sd-ticket-row active">
                                             <div className="sd-row-top">
                                                 <span className="sd-tck-code">#TCK-1042</span>
                                                 <span className="sd-badge sd-badge-p1">P1 Urgent</span>
                                             </div>
-                                            <div className="sd-row-subject">Payment webhook retry error</div>
+                                            <div className="sd-row-subject">Payment Webhook Retries</div>
                                             <div className="sd-row-meta">
                                                 <span className="sd-status-label open">Open</span>
                                                 <span className="sd-sla-time">SLA: 14m</span>
@@ -326,7 +283,7 @@ function Projects() {
                                                 <span className="sd-tck-code">#TCK-1039</span>
                                                 <span className="sd-badge sd-badge-p2">P2 High</span>
                                             </div>
-                                            <div className="sd-row-subject">Inventory allocation conflict</div>
+                                            <div className="sd-row-subject">Inventory Race Condition</div>
                                             <div className="sd-row-meta">
                                                 <span className="sd-status-label progress">In Progress</span>
                                                 <span className="sd-agent-name">Alex M.</span>
@@ -339,7 +296,7 @@ function Projects() {
                                                 <span className="sd-tck-code">#TCK-1036</span>
                                                 <span className="sd-badge sd-badge-p3">Normal</span>
                                             </div>
-                                            <div className="sd-row-subject">Customer session timeout</div>
+                                            <div className="sd-row-subject">Session Auth Expiry</div>
                                             <div className="sd-row-meta">
                                                 <span className="sd-status-label closed">Resolved</span>
                                                 <span className="sd-agent-name">Adwaid</span>
@@ -348,12 +305,12 @@ function Projects() {
                                     </div>
                                 </div>
 
-                                {/* Active Conversation Panel */}
+                                {/* Right Pane: Live Ticket Conversation & Controls */}
                                 <div className="sd-chat-panel">
                                     <div className="sd-chat-header">
                                         <div className="sd-chat-title-wrap">
-                                            <div className="sd-chat-ticket-id">#TCK-1042 · Payment Webhook</div>
-                                            <div className="sd-chat-meta">Customer: Marcus Vance · SLA Target: 14m</div>
+                                            <div className="sd-chat-ticket-id">#TCK-1042 · Marcus Vance</div>
+                                            <div className="sd-chat-meta">Payment Gateway · SLA Target: 14m</div>
                                         </div>
                                         <div className="sd-realtime-badge">
                                             <span className="sd-live-pulse"></span>
@@ -365,28 +322,22 @@ function Projects() {
                                         <div className="sd-msg-group incoming">
                                             <div className="sd-msg-sender">Marcus V. <span className="sd-msg-time">10:41 AM</span></div>
                                             <div className="sd-bubble">
-                                                We're seeing 504 gateway timeouts on the Razorpay webhook endpoint when retrying failed captures.
+                                                Seeing 504 gateway timeouts on Razorpay retry webhook captures.
                                             </div>
                                         </div>
 
                                         <div className="sd-msg-group outgoing">
                                             <div className="sd-msg-sender">Adwaid (Agent) <span className="sd-msg-time">10:43 AM</span></div>
                                             <div className="sd-bubble">
-                                                Identified the concurrency bottleneck in the retry queue handler. Deploying idempotency key patch now.
+                                                Race condition resolved in queue handler with idempotency locks. Patch live.
                                             </div>
                                         </div>
                                     </div>
 
                                     <div className="sd-composer-bar">
-                                        <input
-                                            type="text"
-                                            readOnly
-                                            className="sd-composer-input"
-                                            value="Reply to customer or leave note..."
-                                            aria-label="Demo Message Composer"
-                                        />
+                                        <span className="sd-composer-placeholder">Reply to customer or leave note...</span>
                                         <button type="button" className="sd-send-btn" aria-label="Send Message" tabIndex={-1}>
-                                            <svg viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+                                            <svg viewBox="0 0 24 24" width="12" height="12" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
                                                 <line x1="22" y1="2" x2="11" y2="13"></line>
                                                 <polygon points="22 2 15 22 11 13 2 9 22 2"></polygon>
                                             </svg>
@@ -400,9 +351,9 @@ function Projects() {
                     {/* Right Column: SupportDesk Details */}
                     <div className="project-details">
                         <span className="project-type-badge badge-realtime">Real-Time System</span>
-                        <h3 className="project-title">SupportDesk – Real-Time Support System</h3>
+                        <h3 className="project-title">SupportDesk – Support & Escalation Platform</h3>
                         <p className="project-description">
-                            A production-ready customer support platform engineered with bidirectional Socket.IO messaging, WebRTC peer-to-peer audio/video calls, and concurrency-safe ticket workflows.
+                            A production-ready customer support platform engineered with bidirectional Socket.IO messaging, WebRTC peer-to-peer video/audio calls, and concurrency-safe ticket workflows.
                         </p>
 
                         {/* Engineering Case Study Highlight */}
@@ -411,11 +362,11 @@ function Projects() {
                                 <span>⚡</span> Key Architectural Highlight
                             </div>
                             <p className="eng-box-content">
-                                <strong>Concurrency-Safe Queue & WebRTC:</strong> Implemented optimistic concurrency controls preventing multiple agents from grabbing the same ticket, coupled with WebRTC mesh signaling for instant zero-latency peer audio/video screen diagnosis.
+                                <strong>Concurrency-Safe Queue & WebRTC:</strong> Implemented optimistic concurrency controls preventing multiple agents from claiming the same ticket, combined with WebRTC peer signaling for instant zero-latency customer screen diagnosis.
                             </p>
                         </div>
 
-                        {/* Features list */}
+                        {/* Features list - 4 High Impact Points */}
                         <div className="project-features-grid">
                             <div className="feature-item">
                                 <span className="check-icon">✓</span>
@@ -431,15 +382,7 @@ function Projects() {
                             </div>
                             <div className="feature-item">
                                 <span className="check-icon">✓</span>
-                                <span>Automated SLA Escalation Timers</span>
-                            </div>
-                            <div className="feature-item">
-                                <span className="check-icon">✓</span>
                                 <span>Concurrency-Safe Assignment Queue</span>
-                            </div>
-                            <div className="feature-item">
-                                <span className="check-icon">✓</span>
-                                <span>Modular Express & MongoDB Architecture</span>
                             </div>
                         </div>
 
