@@ -25,8 +25,8 @@ function LearningJourney() {
                                 <h4 className="institution-name">Catalyst Tech Hub</h4>
                             </div>
                             <div className="journey-meta">
-                                <span className="journey-duration">Certified (2026)</span>
-                                <span className="journey-location">Kerala</span>
+                                <span className="journey-duration">Oct 2025 – Present</span>
+                                <span className="journey-location">Kerala (On-site)</span>
                             </div>
                         </div>
 

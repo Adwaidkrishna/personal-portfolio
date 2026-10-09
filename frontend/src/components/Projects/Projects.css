@@ -916,264 +916,509 @@
     color: #f1f5f9;
 }
 
-/* SupportDesk Visual Mockup */
-.sd-mockup {
-    width: 100%;
-    background-color: #060913;
-    border: 1px solid rgba(255, 255, 255, 0.08);
-    border-radius: 14px;
-    box-shadow: 0 16px 36px rgba(0, 0, 0, 0.55);
-    display: flex;
-    flex-direction: column;
-    overflow: hidden;
-    font-family: 'Inter', system-ui, sans-serif;
+/* SupportDesk SaaS Dashboard Interface Preview */
+.supportdesk-card {
+    grid-template-columns: 1.16fr 0.84fr;
+    align-items: center;
 }
 
-.sd-header {
-    background: #0b1120;
-    padding: 12px 16px;
+.sd-saas-window {
+    width: 100%;
+    background-color: #080d1a;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 14px;
+    box-shadow: 
+        0 24px 50px rgba(0, 0, 0, 0.6),
+        0 0 1px rgba(255, 255, 255, 0.12);
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+    position: relative;
+    box-sizing: border-box;
+}
+
+/* A. Top Navigation Bar */
+.sd-topbar {
+    background: #0b1122;
+    padding: 10px 16px;
     display: flex;
     justify-content: space-between;
     align-items: center;
     border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+    gap: 12px;
 }
 
-.sd-brand {
+.sd-topbar-left {
     display: flex;
     align-items: center;
     gap: 8px;
+    flex-shrink: 0;
 }
 
-.sd-logo-icon {
+.sd-app-icon {
     width: 24px;
     height: 24px;
     border-radius: 6px;
-    background: linear-gradient(135deg, #10b981, #059669);
-    color: #fff;
-    font-size: 12px;
+    background: linear-gradient(135deg, #0284c7, #0ea5e9);
+    color: #ffffff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 2px 8px rgba(14, 165, 233, 0.35);
+}
+
+.sd-app-name {
+    font-size: 13px;
+    font-weight: 700;
+    color: #f8fafc;
+    letter-spacing: -0.01em;
+}
+
+.sd-demo-tag {
+    font-size: 9px;
+    font-weight: 700;
+    padding: 2px 5px;
+    border-radius: 4px;
+    background: rgba(56, 189, 248, 0.12);
+    color: #38bdf8;
+    border: 1px solid rgba(56, 189, 248, 0.28);
+    letter-spacing: 0.05em;
+}
+
+.sd-topbar-search {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    background: rgba(15, 23, 42, 0.65);
+    border: 1px solid rgba(255, 255, 255, 0.06);
+    border-radius: 6px;
+    padding: 4px 10px;
+    font-size: 11px;
+    color: #64748b;
+    flex: 1;
+    max-width: 175px;
+    user-select: none;
+}
+
+.sd-topbar-right {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    flex-shrink: 0;
+}
+
+.sd-agent-status {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    font-size: 11px;
+    font-weight: 600;
+    color: #10b981;
+}
+
+.sd-status-dot {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: #10b981;
+    box-shadow: 0 0 6px rgba(16, 185, 129, 0.6);
+}
+
+.sd-user-avatar {
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    background: #1e293b;
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    color: #94a3b8;
+    font-size: 10px;
     font-weight: 700;
     display: flex;
     align-items: center;
     justify-content: center;
 }
 
-.sd-title {
-    font-size: 13px;
-    font-weight: 600;
-    color: #f1f5f9;
-}
-
-.sd-live-status {
-    display: flex;
-    align-items: center;
-    gap: 8px;
-    flex-wrap: wrap;
-}
-
-.sd-status-pill {
-    display: flex;
-    align-items: center;
-    gap: 5px;
-    font-size: 10.5px;
-    font-weight: 600;
-    padding: 2px 8px;
-    border-radius: 999px;
-    background: rgba(16, 185, 129, 0.15);
-    color: #34d399;
-    border: 1px solid rgba(16, 185, 129, 0.3);
-}
-
-.sd-status-pill.webrtc-pill {
-    background: rgba(139, 92, 246, 0.15);
-    color: #a78bfa;
-    border-color: rgba(139, 92, 246, 0.3);
-}
-
-.sd-body {
+/* SaaS Workspace Layout */
+.sd-workspace {
     display: grid;
-    grid-template-columns: 0.95fr 1.05fr;
-    min-height: 250px;
+    grid-template-columns: 105px 180px 1fr;
     background: #080d1a;
+    min-height: 285px;
 }
 
-.sd-queue-panel {
+/* B. Compact Navigation Sidebar */
+.sd-sidebar {
+    background: #090e1c;
     border-right: 1px solid rgba(255, 255, 255, 0.05);
-    padding: 14px;
+    padding: 10px 6px;
     display: flex;
     flex-direction: column;
-    gap: 10px;
+    gap: 3px;
+    user-select: none;
 }
 
-.sd-queue-title {
+.sd-nav-item {
+    display: flex;
+    align-items: center;
+    gap: 7px;
+    padding: 6px 8px;
+    border-radius: 6px;
     font-size: 11px;
+    color: #94a3b8;
+    font-weight: 500;
+    transition: all 0.15s ease;
+}
+
+.sd-nav-item.active {
+    background: rgba(56, 189, 248, 0.12);
+    color: #38bdf8;
+    font-weight: 600;
+}
+
+.sd-nav-count {
+    margin-left: auto;
+    font-size: 9px;
+    font-weight: 600;
+    padding: 1px 5px;
+    border-radius: 999px;
+    background: rgba(255, 255, 255, 0.06);
+    color: #64748b;
+}
+
+.sd-nav-count.alert {
+    background: rgba(239, 68, 68, 0.2);
+    color: #f87171;
+}
+
+.sd-nav-item.active .sd-nav-count {
+    background: rgba(56, 189, 248, 0.25);
+    color: #38bdf8;
+}
+
+/* C. Ticket List Column */
+.sd-tickets-panel {
+    border-right: 1px solid rgba(255, 255, 255, 0.05);
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    background: #090f1f;
+}
+
+.sd-panel-head {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 2px 2px 6px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.sd-panel-title {
+    font-size: 10.5px;
     font-weight: 700;
     text-transform: uppercase;
     letter-spacing: 0.05em;
     color: #64748b;
-    margin-bottom: 2px;
 }
 
-.sd-ticket-item {
-    background: rgba(15, 23, 42, 0.8);
-    border: 1px solid rgba(255, 255, 255, 0.06);
-    border-radius: 8px;
-    padding: 10px;
+.sd-queue-indicator {
+    font-size: 9.5px;
+    color: #10b981;
+    font-weight: 600;
+}
+
+.sd-ticket-rows {
     display: flex;
     flex-direction: column;
     gap: 6px;
+}
+
+.sd-ticket-row {
+    background: rgba(15, 23, 42, 0.6);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    border-radius: 7px;
+    padding: 8px 9px;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
     transition: all 0.2s ease;
 }
 
-.sd-ticket-item.active-ticket {
-    border-color: rgba(16, 185, 129, 0.4);
-    background: rgba(16, 185, 129, 0.05);
+.sd-ticket-row.active {
+    background: rgba(14, 165, 233, 0.09);
+    border-color: rgba(56, 189, 248, 0.35);
 }
 
-.sd-ticket-top {
+.sd-row-top {
     display: flex;
     justify-content: space-between;
     align-items: center;
 }
 
-.sd-ticket-id {
-    font-size: 11.5px;
+.sd-tck-code {
+    font-size: 10.5px;
     font-weight: 700;
     color: #38bdf8;
+    font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
 }
 
-.sd-priority-badge {
-    font-size: 9.5px;
+.sd-badge {
+    font-size: 9px;
     font-weight: 700;
-    padding: 2px 6px;
+    padding: 1px 5px;
     border-radius: 4px;
     text-transform: uppercase;
 }
 
-.priority-urgent {
-    background: rgba(239, 68, 68, 0.2);
+.sd-badge-p1 {
+    background: rgba(239, 68, 68, 0.18);
     color: #f87171;
     border: 1px solid rgba(239, 68, 68, 0.3);
 }
 
-.priority-high {
-    background: rgba(245, 158, 11, 0.2);
+.sd-badge-p2 {
+    background: rgba(245, 158, 11, 0.18);
     color: #fbbf24;
     border: 1px solid rgba(245, 158, 11, 0.3);
 }
 
-.sd-ticket-title {
-    font-size: 12px;
-    color: #e2e8f0;
+.sd-badge-p3 {
+    background: rgba(100, 116, 139, 0.18);
+    color: #94a3b8;
+    border: 1px solid rgba(100, 116, 139, 0.3);
+}
+
+.sd-row-subject {
+    font-size: 11.5px;
     font-weight: 500;
+    color: #f1f5f9;
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
+    line-height: 1.3;
 }
 
-.sd-ticket-meta {
+.sd-row-meta {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    font-size: 10px;
+    font-size: 9.5px;
     color: #64748b;
+    margin-top: 2px;
 }
 
-.sd-sla-timer {
-    color: #f87171;
+.sd-status-label.open { color: #f87171; font-weight: 600; }
+.sd-status-label.progress { color: #fbbf24; font-weight: 600; }
+.sd-status-label.closed { color: #10b981; font-weight: 600; }
+
+.sd-sla-time {
+    color: #ef4444;
     font-weight: 600;
 }
 
+.sd-agent-name {
+    color: #64748b;
+}
+
+/* D. Active Conversation Panel */
 .sd-chat-panel {
-    padding: 14px;
+    padding: 12px 14px;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    background: rgba(11, 17, 32, 0.5);
+    background: #080d1a;
 }
 
 .sd-chat-header {
     display: flex;
     justify-content: space-between;
-    align-items: center;
+    align-items: flex-start;
     padding-bottom: 8px;
     border-bottom: 1px solid rgba(255, 255, 255, 0.05);
     margin-bottom: 10px;
+    gap: 8px;
 }
 
-.sd-chat-ticket {
-    font-size: 11.5px;
-    font-weight: 600;
-    color: #cbd5e1;
+.sd-chat-ticket-id {
+    font-size: 12px;
+    font-weight: 700;
+    color: #f8fafc;
+    line-height: 1.3;
 }
 
-.sd-webrtc-active-call {
+.sd-chat-meta {
+    font-size: 10px;
+    color: #64748b;
+    margin-top: 2px;
+}
+
+.sd-realtime-badge {
     display: inline-flex;
     align-items: center;
-    gap: 6px;
-    font-size: 10.5px;
-    padding: 2px 8px;
+    gap: 5px;
+    font-size: 10px;
+    font-weight: 600;
+    padding: 2px 7px;
     border-radius: 999px;
-    background: rgba(239, 68, 68, 0.15);
-    color: #f87171;
-    border: 1px solid rgba(239, 68, 68, 0.3);
+    background: rgba(16, 185, 129, 0.12);
+    color: #34d399;
+    border: 1px solid rgba(16, 185, 129, 0.25);
+    flex-shrink: 0;
 }
 
-.call-pulse-dot {
-    width: 6px;
-    height: 6px;
+.sd-live-pulse {
+    width: 5px;
+    height: 5px;
     border-radius: 50%;
-    background: #ef4444;
+    background: #10b981;
 }
 
-.sd-messages-list {
+.sd-messages-stream {
     display: flex;
     flex-direction: column;
-    gap: 8px;
+    gap: 9px;
     margin-bottom: 10px;
 }
 
-.sd-message-bubble {
-    font-size: 11px;
-    line-height: 1.4;
-    padding: 8px 10px;
-    border-radius: 8px;
-    max-width: 90%;
-}
-
-.sd-message-bubble.incoming {
-    background: rgba(30, 41, 59, 0.7);
-    color: #94a3b8;
-    align-self: flex-start;
-    border-bottom-left-radius: 2px;
-}
-
-.sd-message-bubble.outgoing {
-    background: rgba(16, 185, 129, 0.15);
-    color: #d1fae5;
-    border: 1px solid rgba(16, 185, 129, 0.3);
-    align-self: flex-end;
-    border-bottom-right-radius: 2px;
-}
-
-.sd-input-preview {
+.sd-msg-group {
     display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 6px 10px;
-    background: rgba(15, 23, 42, 0.9);
-    border: 1px solid rgba(255, 255, 255, 0.08);
-    border-radius: 6px;
-    font-size: 11px;
+    flex-direction: column;
+    gap: 3px;
+    max-width: 92%;
+}
+
+.sd-msg-group.incoming {
+    align-self: flex-start;
+}
+
+.sd-msg-group.outgoing {
+    align-self: flex-end;
+}
+
+.sd-msg-sender {
+    font-size: 9.5px;
+    font-weight: 600;
     color: #64748b;
 }
 
-.socket-tag {
-    font-size: 9.5px;
-    padding: 2px 6px;
-    border-radius: 4px;
-    background: rgba(56, 189, 248, 0.15);
+.sd-msg-group.outgoing .sd-msg-sender {
+    text-align: right;
     color: #38bdf8;
-    font-weight: 600;
+}
+
+.sd-msg-time {
+    font-weight: 400;
+    color: #475569;
+    margin-left: 4px;
+}
+
+.sd-bubble {
+    font-size: 11.5px;
+    line-height: 1.45;
+    padding: 7px 11px;
+    border-radius: 8px;
+}
+
+.incoming .sd-bubble {
+    background: rgba(30, 41, 59, 0.65);
+    color: #cbd5e1;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    border-top-left-radius: 2px;
+}
+
+.outgoing .sd-bubble {
+    background: rgba(14, 165, 233, 0.14);
+    color: #e0f2fe;
+    border: 1px solid rgba(56, 189, 248, 0.3);
+    border-top-right-radius: 2px;
+}
+
+.sd-composer-bar {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 4px 6px 4px 12px;
+    background: rgba(15, 23, 42, 0.95);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 7px;
+    margin-top: auto;
+}
+
+.sd-composer-input {
+    background: transparent;
+    border: none;
+    outline: none;
+    font-size: 11px;
+    color: #94a3b8;
+    flex: 1;
+    font-family: inherit;
+    cursor: default;
+}
+
+.sd-send-btn {
+    width: 24px;
+    height: 24px;
+    border-radius: 6px;
+    background: #0ea5e9;
+    border: none;
+    color: #ffffff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    flex-shrink: 0;
+    transition: background 0.2s ease;
+}
+
+.sd-send-btn:hover {
+    background: #0284c7;
+}
+
+/* ==================================================
+   RESPONSIVE DESIGN FOR SUPPORTDESK & FEATURED CARDS
+   ================================================== */
+@media (max-width: 1200px) {
+    .supportdesk-card {
+        grid-template-columns: 1.12fr 0.88fr;
+        gap: 32px;
+    }
+
+    .sd-workspace {
+        grid-template-columns: 95px 165px 1fr;
+    }
+
+    .sd-topbar-search {
+        display: none;
+    }
+}
+
+@media (max-width: 1024px) {
+    .supportdesk-card {
+        grid-template-columns: 1fr;
+        gap: 32px;
+        padding: 32px;
+    }
+
+    .sd-workspace {
+        grid-template-columns: 100px 175px 1fr;
+    }
+}
+
+@media (max-width: 768px) {
+    .supportdesk-card {
+        padding: 24px;
+        gap: 24px;
+    }
+
+    /* Hide sidebar on tablet/mobile so ticket queue and chat are comfortable */
+    .sd-sidebar {
+        display: none;
+    }
+
+    .sd-workspace {
+        grid-template-columns: 165px 1fr;
+    }
 }
 
 @media (max-width: 640px) {
@@ -1182,22 +1427,67 @@
         margin-bottom: 36px;
     }
 
-    .sd-body {
-        grid-template-columns: 1fr;
+    .supportdesk-card {
+        padding: 18px 16px;
+        gap: 20px;
+        border-radius: 16px;
     }
 
-    .sd-queue-panel {
+    .sd-workspace {
+        grid-template-columns: 1fr;
+        min-height: auto;
+    }
+
+    .sd-tickets-panel {
         border-right: none;
-        border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+        border-bottom: 1px solid rgba(255, 255, 255, 0.06);
         padding: 10px;
+    }
+
+    /* Show top 2 tickets on narrow mobile screens to avoid vertical bloating */
+    .sd-ticket-row:nth-child(3) {
+        display: none;
     }
 
     .sd-chat-panel {
-        padding: 10px;
+        padding: 12px 10px;
+    }
+
+    .sd-chat-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 6px;
+    }
+
+    .sd-realtime-badge {
+        align-self: flex-start;
+    }
+
+    .sd-bubble {
+        font-size: 11px;
+        padding: 7px 9px;
     }
 
     .eng-case-study-box {
         padding: 12px;
         font-size: 12px;
+    }
+}
+
+@media (max-width: 480px) {
+    .supportdesk-card {
+        padding: 16px 12px;
+    }
+
+    .sd-topbar {
+        padding: 8px 10px;
+    }
+
+    .sd-agent-status span:last-child {
+        display: none; /* keep green status dot only */
+    }
+
+    .sd-composer-bar {
+        padding: 4px 6px 4px 10px;
     }
 }
