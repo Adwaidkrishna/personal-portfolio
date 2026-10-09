@@ -9,8 +9,7 @@ function About() {
                 <h2 className="about-heading">About Me</h2>
                 <div className="about-underline"></div>
                 <p className="about-description">
-                    I'm a passionate Full Stack Developer focused on building real-world web applications. 
-                    I love solving problems, writing clean code, and learning new technologies.
+                    I'm a Full Stack Developer focused on building practical web applications with JavaScript, React, Node.js, Express, and MongoDB. Through projects like URBANIQ and SupportDesk, I've worked on authentication, REST APIs, inventory management, and real-time communication. I'm looking to contribute to a development team while continuing to grow as an engineer.
                 </p>
                 <a href="#contact" className="about-link">
                     Know more about me <span>→</span>

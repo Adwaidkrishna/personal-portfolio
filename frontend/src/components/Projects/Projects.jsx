@@ -15,7 +15,7 @@ function Projects() {
             name: 'SupportDesk',
             badge: 'Featured',
             title: 'SupportDesk – Real-Time Support Platform',
-            description: 'A full-stack customer support platform engineered for real-time messaging, WebRTC peer audio/video calls, role-based workflows, and automated SLA tracking.',
+            description: 'A full-stack customer support platform featuring role-based ticket management, real-time chat, WebRTC audio/video calls and screen sharing, and automated SLA monitoring.',
             features: [
                 {
                     label: 'Real-Time Chat',
@@ -72,15 +72,15 @@ function Projects() {
                     )
                 }
             ],
-            demoUrl: 'https://github.com/Adwaidkrishna/SupportDesk',
-            demoLabel: 'View Project',
+            demoUrl: null, // Avoid duplicate link; genuine live demo is not yet deployed
             githubUrl: 'https://github.com/Adwaidkrishna/SupportDesk',
+            githubLabel: 'View Source Code',
             techStack: ['React', 'Node.js', 'Express.js', 'MongoDB', 'Socket.IO', 'WebRTC', 'JWT', 'Tailwind CSS'],
             highlights: [
-                'Modular MVC architecture with 30+ validated REST endpoints',
-                'Atomic concurrency locks preventing multi-agent ticket contention',
-                'Peer-to-peer WebRTC mesh signaling for zero-latency screen diagnosis',
-                'Automated priority-based SLA escalation timers & worker queues'
+                'Designed a layered MVC backend with 30+ REST API endpoints',
+                'Implemented atomic ticket assignment to prevent multiple agents from claiming the same ticket',
+                'Built real-time ticket messaging and WebRTC-based communication',
+                'Developed priority-based SLA monitoring and deadline alerts'
             ]
         },
         {
@@ -91,7 +91,7 @@ function Projects() {
             name: 'URBANIQ',
             badge: 'Featured',
             title: 'URBANIQ – eCommerce & Inventory Platform',
-            description: "A production-grade eCommerce application for men's fashion featuring real-time stock validation, automated inventory tracking, and role-based administration.",
+            description: "A full-stack men's fashion e-commerce platform featuring product management, secure payments, order processing, and inventory management with purchase and batch tracking.",
             features: [
                 {
                     label: 'Product Management',
@@ -156,12 +156,13 @@ function Projects() {
             demoUrl: 'https://urbantiq.store/',
             demoLabel: 'Live Demo',
             githubUrl: 'https://github.com/Adwaidkrishna/urbantiq',
+            githubLabel: 'GitHub',
             techStack: ['JavaScript', 'Node.js', 'Express.js', 'MongoDB', 'Razorpay', 'AWS EC2', 'Nginx', 'PM2'],
             highlights: [
-                'FIFO inventory model with batch valuation & conditional atomic $inc checks',
-                'Idempotent Razorpay webhook architecture eliminating double-charge risks',
-                'Order lifecycle state machine with automated PDF invoice generation',
-                'Zero-downtime production deployment on AWS EC2 using PM2 & Nginx reverse proxy'
+                'Implemented FIFO inventory deduction across purchase batches with stock validation during checkout',
+                'Integrated Razorpay payments with secure server-side verification and order processing',
+                'Built an automated order lifecycle state machine with PDF invoice generation',
+                'Deployed the application on AWS EC2 using PM2 process management, Nginx reverse proxy, and HTTPS'
             ]
         }
     ];
@@ -178,7 +179,7 @@ function Projects() {
             ),
             iconBg: '#2563eb', // Blue square
             title: 'Backend Auth System',
-            description: 'A secure authentication system with JWT token sessions, bcrypt password hashing, and input validation. Built with Node.js and Express.js.',
+            description: 'A backend authentication system featuring JWT-based authentication, bcrypt password hashing, and input validation, built with Node.js, Express.js, and MongoDB.',
             githubUrl: 'https://github.com/Adwaidkrishna/badge-task',
             techStack: ['Node.js', 'Express.js', 'MongoDB', 'JWT', 'Bcrypt']
         },
@@ -188,7 +189,7 @@ function Projects() {
             brandLetter: 'N',
             iconBg: '#dc2626', // Red square
             title: 'Netflix UI Clone',
-            description: 'Responsive front-end clone of Netflix landing and login pages with custom styles and interactive modal components built with HTML, CSS, and Bootstrap.',
+            description: "A responsive recreation of Netflix's landing and login pages using HTML, CSS, and Bootstrap, with interactive modal components and responsive layouts.",
             githubUrl: 'https://github.com/Adwaidkrishna/netflix',
             techStack: ['HTML', 'CSS', 'Bootstrap']
         }
@@ -255,19 +256,21 @@ function Projects() {
                         {/* Right Column: Actions, Tech Stack, Key Highlights */}
                         <div className="fp-col-right">
                             <div className="fp-actions-row">
-                                <a
-                                    href={project.demoUrl}
-                                    target="_blank"
-                                    rel="noopener noreferrer"
-                                    className={`fp-btn-demo ${project.demoLabel === 'View Project' ? 'fp-btn-view' : ''}`}
-                                >
-                                    <svg viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round">
-                                        <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
-                                        <polyline points="15 3 21 3 21 9"></polyline>
-                                        <line x1="10" y1="14" x2="21" y2="3"></line>
-                                    </svg>
-                                    {project.demoLabel}
-                                </a>
+                                {project.demoUrl && (
+                                    <a
+                                        href={project.demoUrl}
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                        className="fp-btn-demo"
+                                    >
+                                        <svg viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round">
+                                            <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+                                            <polyline points="15 3 21 3 21 9"></polyline>
+                                            <line x1="10" y1="14" x2="21" y2="3"></line>
+                                        </svg>
+                                        {project.demoLabel || 'Live Demo'}
+                                    </a>
+                                )}
 
                                 <a
                                     href={project.githubUrl}
@@ -278,7 +281,7 @@ function Projects() {
                                     <svg viewBox="0 0 24 24" width="13" height="13" fill="currentColor">
                                         <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"></path>
                                     </svg>
-                                    GitHub
+                                    {project.githubLabel || 'GitHub'}
                                 </a>
                             </div>
 
@@ -292,7 +295,7 @@ function Projects() {
                                 </div>
                             </div>
 
-                            {/* Key Highlights (4 Unique Technical Achievements) */}
+                            {/* Key Highlights (4 Verified Technical Highlights) */}
                             <div className="fp-meta-block">
                                 <span className="fp-section-label">KEY TECHNICAL HIGHLIGHTS</span>
                                 <ul className="fp-highlights-list">

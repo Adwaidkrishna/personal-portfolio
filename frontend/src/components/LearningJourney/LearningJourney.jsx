@@ -31,7 +31,7 @@ function LearningJourney() {
                         </div>
 
                         <p className="journey-card-intro">
-                            Specialized project-driven training mastering modern scalable web architectures, asynchronous React flows, secure authentication protocols, and server deployment workflows.
+                            Project-based training in full-stack web development, covering React, Node.js, Express, MongoDB, authentication, REST API development, and application deployment.
                         </p>
 
                         <div className="journey-skills-container">
