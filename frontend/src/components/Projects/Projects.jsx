@@ -15,7 +15,7 @@ function Projects() {
             name: 'SupportDesk',
             badge: 'Featured',
             title: 'SupportDesk – Real-Time Support Platform',
-            description: 'A full-stack support platform with real-time ticketing, live chat, audio/video calls, and automated SLA monitoring. Built with role-based access for customers, agents, and admins.',
+            description: 'A full-stack customer support platform engineered for real-time messaging, WebRTC peer audio/video calls, role-based workflows, and automated SLA tracking.',
             features: [
                 {
                     label: 'Real-Time Chat',
@@ -73,16 +73,14 @@ function Projects() {
                 }
             ],
             demoUrl: 'https://github.com/Adwaidkrishna/SupportDesk',
-            demoLabel: 'Live Demo',
+            demoLabel: 'View Project',
             githubUrl: 'https://github.com/Adwaidkrishna/SupportDesk',
             techStack: ['React', 'Node.js', 'Express.js', 'MongoDB', 'Socket.IO', 'WebRTC', 'JWT', 'Tailwind CSS'],
             highlights: [
-                '30+ REST APIs with layered architecture',
-                'Real-time messaging using Socket.IO',
-                'WebRTC audio/video calls & screen sharing',
-                'Automated SLA monitoring by ticket priority',
-                'Concurrency-safe ticket assignment',
-                'Secure authentication with JWT & RBAC'
+                'Modular MVC architecture with 30+ validated REST endpoints',
+                'Atomic concurrency locks preventing multi-agent ticket contention',
+                'Peer-to-peer WebRTC mesh signaling for zero-latency screen diagnosis',
+                'Automated priority-based SLA escalation timers & worker queues'
             ]
         },
         {
@@ -93,7 +91,7 @@ function Projects() {
             name: 'URBANIQ',
             badge: 'Featured',
             title: 'URBANIQ – eCommerce & Inventory Platform',
-            description: "A full-stack eCommerce platform for men's fashion with product management, secure payments, inventory management, and an admin dashboard.",
+            description: "A production-grade eCommerce application for men's fashion featuring real-time stock validation, automated inventory tracking, and role-based administration.",
             features: [
                 {
                     label: 'Product Management',
@@ -158,14 +156,12 @@ function Projects() {
             demoUrl: 'https://urbantiq.store/',
             demoLabel: 'Live Demo',
             githubUrl: 'https://github.com/Adwaidkrishna/urbantiq',
-            techStack: ['React', 'Node.js', 'Express.js', 'MongoDB', 'Razorpay', 'AWS EC2', 'Nginx', 'PM2'],
+            techStack: ['JavaScript', 'Node.js', 'Express.js', 'MongoDB', 'Razorpay', 'AWS EC2', 'Nginx', 'PM2'],
             highlights: [
-                '90+ REST APIs across eCommerce and inventory modules',
-                'JWT authentication and role-based access control',
-                'Purchase & batch management with FIFO stock validation',
-                'Secure payment integration with Razorpay',
-                'Order lifecycle management and invoice generation',
-                'Deployed on AWS EC2 with Nginx and PM2'
+                'FIFO inventory model with batch valuation & conditional atomic $inc checks',
+                'Idempotent Razorpay webhook architecture eliminating double-charge risks',
+                'Order lifecycle state machine with automated PDF invoice generation',
+                'Zero-downtime production deployment on AWS EC2 using PM2 & Nginx reverse proxy'
             ]
         }
     ];
@@ -175,14 +171,14 @@ function Projects() {
             id: 'backend-auth',
             categories: ['All', 'Backend'],
             icon: (
-                <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+                <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
                     <rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect>
                     <path d="M7 11V7a5 5 0 0 1 10 0v4"></path>
                 </svg>
             ),
             iconBg: '#2563eb', // Blue square
             title: 'Backend Auth System',
-            description: 'A secure authentication system with JWT, bcrypt and input validation. Built with Node.js and Express.js.',
+            description: 'A secure authentication system with JWT token sessions, bcrypt password hashing, and input validation. Built with Node.js and Express.js.',
             githubUrl: 'https://github.com/Adwaidkrishna/badge-task',
             techStack: ['Node.js', 'Express.js', 'MongoDB', 'JWT', 'Bcrypt']
         },
@@ -192,7 +188,7 @@ function Projects() {
             brandLetter: 'N',
             iconBg: '#dc2626', // Red square
             title: 'Netflix UI Clone',
-            description: 'Responsive front-end clone of Netflix landing and login pages using HTML, CSS and Bootstrap.',
+            description: 'Responsive front-end clone of Netflix landing and login pages with custom styles and interactive modal components built with HTML, CSS, and Bootstrap.',
             githubUrl: 'https://github.com/Adwaidkrishna/netflix',
             techStack: ['HTML', 'CSS', 'Bootstrap']
         }
@@ -209,7 +205,7 @@ function Projects() {
                     <span className="projects-kicker">PROJECTS</span>
                     <h2 className="projects-heading">Featured Projects</h2>
                     <p className="projects-subtitle">
-                        A collection of full-stack and frontend projects that showcase my skills, problem-solving approach, and real-world development experience.
+                        Full-stack applications demonstrating my development skills, architecture decisions, and real-world problem-solving.
                     </p>
                 </div>
 
@@ -263,7 +259,7 @@ function Projects() {
                                     href={project.demoUrl}
                                     target="_blank"
                                     rel="noopener noreferrer"
-                                    className="fp-btn-demo"
+                                    className={`fp-btn-demo ${project.demoLabel === 'View Project' ? 'fp-btn-view' : ''}`}
                                 >
                                     <svg viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round">
                                         <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
@@ -296,9 +292,9 @@ function Projects() {
                                 </div>
                             </div>
 
-                            {/* Key Highlights */}
+                            {/* Key Highlights (4 Unique Technical Achievements) */}
                             <div className="fp-meta-block">
-                                <span className="fp-section-label">KEY HIGHLIGHTS</span>
+                                <span className="fp-section-label">KEY TECHNICAL HIGHLIGHTS</span>
                                 <ul className="fp-highlights-list">
                                     {project.highlights.map((hl, idx) => (
                                         <li key={idx} className="fp-highlight-item">
@@ -317,7 +313,14 @@ function Projects() {
                 ))}
             </div>
 
-            {/* Secondary Projects Row (Bottom 2-column grid as shown in mockup) */}
+            {/* Other Projects Section Header */}
+            {visibleSecondary.length > 0 && (
+                <div className="sec-projects-header">
+                    <h3 className="sec-projects-heading">Other Projects</h3>
+                </div>
+            )}
+
+            {/* Secondary Projects Row (Bottom 2-column grid) */}
             {visibleSecondary.length > 0 && (
                 <div className="sec-projects-row">
                     {visibleSecondary.map((proj) => (
