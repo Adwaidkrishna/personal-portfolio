@@ -10,46 +10,10 @@ function LearningJourney() {
             </div>
 
             <div className="journey-timeline">
-                {/* Milestone 1: Professional Experience - Future By Catalyst */}
+                {/* Milestone 1: Technical Training - Catalyst Tech Hub */}
                 <div className="timeline-item">
                     <div className="timeline-marker">
                         <div className="marker-dot active-dot"></div>
-                        <div className="marker-line"></div>
-                    </div>
-                    
-                    <div className="timeline-content">
-                        <div className="journey-card-header">
-                            <div>
-                                <span className="journey-type-badge">Professional Experience</span>
-                                <h3 className="journey-title">Full Stack Web Development Intern</h3>
-                                <h4 className="institution-name">Future By Catalyst</h4>
-                            </div>
-                            <div className="journey-meta">
-                                <span className="journey-duration">11 Months Internship</span>
-                                <span className="journey-location">Calicut, Kerala (On-site)</span>
-                            </div>
-                        </div>
-
-                        <p className="journey-card-intro">
-                            Hands-on full-stack software development internship building production-grade web applications, RESTful API integrations, responsive interfaces, and database schemas.
-                        </p>
-
-                        <div className="journey-skills-container">
-                            <span className="journey-skill-tag">React.js</span>
-                            <span className="journey-skill-tag">Node.js</span>
-                            <span className="journey-skill-tag">Express.js</span>
-                            <span className="journey-skill-tag">MongoDB</span>
-                            <span className="journey-skill-tag">JavaScript (ES6+)</span>
-                            <span className="journey-skill-tag">REST APIs</span>
-                            <span className="journey-skill-tag">Git & GitHub</span>
-                        </div>
-                    </div>
-                </div>
-
-                {/* Milestone 2: Technical Training - Catalyst Tech Hub */}
-                <div className="timeline-item">
-                    <div className="timeline-marker">
-                        <div className="marker-dot"></div>
                         <div className="marker-line"></div>
                     </div>
                     
